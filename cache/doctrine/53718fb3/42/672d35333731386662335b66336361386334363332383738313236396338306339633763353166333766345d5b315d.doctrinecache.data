@@ -1,0 +1,1859 @@
+1569601082
+a:2:{s:7:"content";s:118103:"<nav class="table-of-contents toc" role="navigation">
+                <span class="toctitle">Table of contents:</span>
+      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+  <ul>
+      
+        
+        
+              <li><a href="#docker" class="toclink" title="Docker">Docker</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#building-images-to-use-with..." class="toclink" title="Building images to use with Jenkins">Building images to use with Jenkins</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#jenkins" class="toclink" title="Jenkins">Jenkins</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#set-up-jenkins-container" class="toclink" title="Set up jenkins container">Set up jenkins container</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#further-steps-for-production" class="toclink" title="further steps for production">further steps for production</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#a-small-pipeline-example" class="toclink" title="A small pipeline example">A small pipeline example</a></li>
+      
+        
+        
+              <li><a href="#dynamically-configured-docker..." class="toclink" title="Dynamically configured docker agents">Dynamically configured docker agents</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#configure-docker-to-listen-on-ip" class="toclink" title="configure docker to listen on IP">configure docker to listen on IP</a></li>
+      
+        
+        
+              <li><a href="#configure-docker-agent-on..." class="toclink" title="configure docker agent on jenkins master">configure docker agent on jenkins master</a></li>
+      
+                      </ul></li>
+              </ul></li>
+          
+        
+              <li><a href="#the-continuous-integration..." class="toclink" title="The continuous integration pipeline">The continuous integration pipeline</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#the-jenkins-pipeline-structure" class="toclink" title="The jenkins pipeline structure">The jenkins pipeline structure</a></li>
+      
+        
+        
+              <li><a href="#pipeline-syntax" class="toclink" title="Pipeline syntax">Pipeline syntax</a></li>
+      
+        
+        
+              <li><a href="#the-commit-pipeline" class="toclink" title="The commit pipeline">The commit pipeline</a></li>
+      
+        
+        
+              <li><a href="#create-a-ci-project-with-spring..." class="toclink" title="Create a CI project with spring and gradle">Create a CI project with spring and gradle</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#checkout-stage" class="toclink" title="Checkout stage">Checkout stage</a></li>
+      
+        
+        
+              <li><a href="#compile-stage" class="toclink" title="Compile stage">Compile stage</a></li>
+      
+        
+        
+              <li><a href="#unit-test-stage" class="toclink" title="Unit test stage">Unit test stage</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#improve-the-calculator-commit..." class="toclink" title="Improve the calculator commit pipeline with code quality stages">Improve the calculator commit pipeline with code quality stages</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#code-coverage-testing" class="toclink" title="Code coverage testing">Code coverage testing</a></li>
+      
+        
+        
+              <li><a href="#static-code-analysis" class="toclink" title="Static code analysis">Static code analysis</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#triggers-and-notifications" class="toclink" title="Triggers and notifications">Triggers and notifications</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#triggers" class="toclink" title="Triggers">Triggers</a></li>
+      
+        
+        
+              <li><a href="#notifications" class="toclink" title="Notifications">Notifications</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#team-development-workflows" class="toclink" title="Team development workflows">Team development workflows</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#trunk-based-workflow" class="toclink" title="Trunk-based workflow">Trunk-based workflow</a></li>
+      
+        
+        
+              <li><a href="#branching-workflow" class="toclink" title="Branching workflow">Branching workflow</a></li>
+      
+        
+        
+              <li><a href="#forking-workflow" class="toclink" title="Forking workflow">Forking workflow</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#workflow-effect-on-the-ci..." class="toclink" title="Workflow effect on the CI process">Workflow effect on the CI process</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#trunk-based" class="toclink" title="Trunk based">Trunk based</a></li>
+      
+        
+        
+              <li><a href="#branching" class="toclink" title="Branching">Branching</a></li>
+      
+        
+        
+              <li><a href="#forking" class="toclink" title="Forking">Forking</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#jenkins-multi-branch-pipelines" class="toclink" title="Jenkins multi-branch pipelines">Jenkins multi-branch pipelines</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#automated-acceptance-testing" class="toclink" title="Automated acceptance testing">Automated acceptance testing</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#the-artifact-repository" class="toclink" title="The artifact repository">The artifact repository</a></li>
+      
+        
+        
+              <li><a href="#implement-local-docker-registry" class="toclink" title="Implement local docker registry">Implement local docker registry</a></li>
+      
+        
+        
+              <li><a href="#run-acceptance-testing-in-the..." class="toclink" title="Run acceptance testing in the pipeline">Run acceptance testing in the pipeline</a></li>
+      
+        
+        
+              <li><a href="#writing-acceptance-tests" class="toclink" title="Writing acceptance tests">Writing acceptance tests</a></li>
+      
+        
+        
+              <li><a href="#use-the-cucumber-framework-to..." class="toclink" title="Use the Cucumber framework to write acceptance tests">Use the Cucumber framework to write acceptance tests</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#create-acceptance-criteria" class="toclink" title="Create acceptance criteria">Create acceptance criteria</a></li>
+      
+        
+        
+              <li><a href="#create-step-definitions" class="toclink" title="Create step definitions">Create step definitions</a></li>
+      
+        
+        
+              <li><a href="#acceptance-testing-drives..." class="toclink" title="Acceptance testing drives development">Acceptance testing drives development</a></li>
+      
+                      </ul></li>
+              </ul></li>
+          
+        
+              <li><a href="#clustering-with-kubernetes" class="toclink" title="Clustering with Kubernetes">Clustering with Kubernetes</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#advanced-kubernetes-concepts" class="toclink" title="Advanced Kubernetes concepts">Advanced Kubernetes concepts</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#scaling" class="toclink" title="Scaling">Scaling</a></li>
+      
+        
+        
+              <li><a href="#updating-an-application" class="toclink" title="Updating an application">Updating an application</a></li>
+      
+        
+        
+              <li><a href="#rolling-updates" class="toclink" title="Rolling updates">Rolling updates</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#resolving-application..." class="toclink" title="Resolving application dependencies with k8s">Resolving application dependencies with k8s</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#kubernetes-dns-resolution" class="toclink" title="Kubernetes DNS resolution">Kubernetes DNS resolution</a></li>
+      
+                      </ul></li>
+              </ul></li>
+          
+        
+              <li><a href="#configuration-management-with..." class="toclink" title="Configuration management with Ansible">Configuration management with Ansible</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#using-ansible" class="toclink" title="Using Ansible">Using Ansible</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#ansible-playbooks" class="toclink" title="Ansible playbooks">Ansible playbooks</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#deployment-with-ansible" class="toclink" title="Deployment with Ansible">Deployment with Ansible</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#deploy-the-calculator-app-with..." class="toclink" title="Deploy the calculator app with hazelcast">Deploy the calculator app with hazelcast</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#ansible-with-docker-and..." class="toclink" title="Ansible with Docker and Kubernetes">Ansible with Docker and Kubernetes</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#provision-a-docker-host-and..." class="toclink" title="Provision a docker host and deploy an app">Provision a docker host and deploy an app</a></li>
+      
+                      </ul></li>
+              </ul></li>
+          
+        
+              <li><a href="#continuous-delivery-pipeline" class="toclink" title="Continuous Delivery Pipeline">Continuous Delivery Pipeline</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#environments-and-infrastructure" class="toclink" title="Environments and Infrastructure">Environments and Infrastructure</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#production" class="toclink" title="Production">Production</a></li>
+      
+        
+        
+              <li><a href="#staging" class="toclink" title="Staging">Staging</a></li>
+      
+        
+        
+              <li><a href="#the-qa-environment" class="toclink" title="The QA environment">The QA environment</a></li>
+      
+        
+        
+              <li><a href="#the-development-environment" class="toclink" title="The development environment">The development environment</a></li>
+      
+        
+        
+              <li><a href="#environments-in-continuous..." class="toclink" title="Environments in continuous delivery">Environments in continuous delivery</a></li>
+      
+        
+        
+              <li><a href="#securing-environments" class="toclink" title="Securing environments">Securing environments</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#nonfunctional-testing" class="toclink" title="Nonfunctional testing">Nonfunctional testing</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#types-of-nonfunctional-tests" class="toclink" title="Types of nonfunctional tests">Types of nonfunctional tests</a></li>
+      
+        
+        
+              <li><a href="#challenges-of-nonfunctional..." class="toclink" title="Challenges of nonfunctional testing">Challenges of nonfunctional testing</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#application-versioning" class="toclink" title="Application versioning">Application versioning</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#versioning-strategies" class="toclink" title="Versioning strategies">Versioning strategies</a></li>
+      
+        
+        
+              <li><a href="#versioning-in-the-pipeline" class="toclink" title="Versioning in the pipeline">Versioning in the pipeline</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#complete-the-cd-pipeline" class="toclink" title="Complete the CD pipeline">Complete the CD pipeline</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#inventory" class="toclink" title="Inventory">Inventory</a></li>
+      
+        
+        
+              <li><a href="#versioning" class="toclink" title="Versioning">Versioning</a></li>
+      
+        
+        
+              <li><a href="#remote-staging-environment" class="toclink" title="Remote staging environment">Remote staging environment</a></li>
+      
+        
+        
+              <li><a href="#acceptance-testing-environment" class="toclink" title="Acceptance testing environment">Acceptance testing environment</a></li>
+      
+        
+        
+              <li><a href="#release-app-to-production..." class="toclink" title="Release app to production environment">Release app to production environment</a></li>
+      
+        
+        
+              <li><a href="#smoke-testing" class="toclink" title="Smoke testing">Smoke testing</a></li>
+      
+              </ul></li>
+          </ul></li>
+      
+  </ul>
+</nav>
+
+
+<h2 id="docker" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#docker" title="Permanent link: Docker" data-icon="#">Docker</a></h2>
+<h3 id="building-images-to-use-with..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#building-images-to-use-with..." title="Permanent link: Building images to use with Jenkins" data-icon="#">Building images to use with Jenkins</a></h3>
+<p>There are fundamentally 2 ways to create a new image.</p>
+<ul>
+<li><code>docker commit dee2cb192c6c ubuntu_with_git</code> - change a running container somehow and commit the changes to the originating image with a new name</li>
+<li><code>docker build -t ubuntu_with_python .</code>  create a Dockerfile to build the image</li>
+</ul>
+<h2 id="jenkins" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#jenkins" title="Permanent link: Jenkins" data-icon="#">Jenkins</a></h2>
+<h3 id="set-up-jenkins-container" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#set-up-jenkins-container" title="Permanent link: Set up jenkins container" data-icon="#">Set up jenkins container</a></h3>
+<p>You can just run the official jenkins image with the necessary volume and port assignment:</p>
+<pre><code>docker run -d -p 49001:8080 \
+-v $HOME/jenkins_home:/var/jenkins_home \
+--name jenkins jenkins/jenkins:2.150.3</code></pre>
+<p><strong>NOTE:</strong> This will build a standalone jenkins server using WinStone for http. There are separate images for Tomcat based jenkins.</p>
+<p>Or you can build a custom image off the official image if you want to do something like add plugins. This is how, for instance, you could have multiple versions of jenkins for teams to use, rather than have one master with plugin hell going on.</p>
+<p>Just create a base image first with all necessary items common to all teams, then each team can build off that with the team-specific plugins added at build time.</p>
+<p>For example, this groovy script can be run at build time for a custom jenkins image:</p>
+<pre><code>import jenkins.model.*
+Jenkins.instance.setNumExecutors(5)</code></pre>
+<p>Place it in the Dockerfile like so:</p>
+<pre><code>FROM jenkins/jenkins:2.150.3
+COPY executors.groovy
+/usr/share/jenkins/ref/init.groovy.d/executors.groovy
+RUN /usr/local/bin/install-plugins.sh docker-plugin</code></pre>
+<p>Now the jenkins master container will have the docker plugin already installed.</p>
+<h4 id="further-steps-for-production" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#further-steps-for-production" title="Permanent link: further steps for production" data-icon="#">further steps for production</a></h4>
+<p>Authentication for a larger envirionment would probably need more granularity than the jenkins default of everyone doing everything and using the local jenkins user database, it would either come from LDAP or AD most likely.</p>
+<p>Also backups consisting of the jenkins_home volume, which contains everything unique in a jenkins container.</p>
+<h3 id="a-small-pipeline-example" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#a-small-pipeline-example" title="Permanent link: A small pipeline example" data-icon="#">A small pipeline example</a></h3>
+<p>This is a script for a pipeline job called <strong>hello world</strong></p>
+<pre><code>pipeline {
+     agent any
+     stages {
+          stage("Hello") {
+               steps {
+                    echo 'Hello World'
+               }
+          }
+     }
+}</code></pre>
+<h3 id="dynamically-configured-docker..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#dynamically-configured-docker..." title="Permanent link: Dynamically configured docker agents" data-icon="#">Dynamically configured docker agents</a></h3>
+<p>This method will have jenkins create a new container for every build in the pipeline.</p>
+<p>For this example, the jenkins master is a docker container. The dynamic build slaves will run on the same docker host.</p>
+<h4 id="configure-docker-to-listen-on-ip" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#configure-docker-to-listen-on-ip" title="Permanent link: configure docker to listen on IP" data-icon="#">configure docker to listen on IP</a></h4>
+<p>To facilitate jenkins being able to connect to the docker service we change a line in the <code>/lib/systemd/system/docker.service</code> to include the following:</p>
+<p></br></p>
+<p>ExecStart=/usr/bin/dockerd <strong>-H 0.0.0.0:2375</strong> -H fd:// --containerd=/run/containerd/containerd.sock</p>
+<p>The important part is in bold.</p>
+<h4 id="configure-docker-agent-on..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#configure-docker-agent-on..." title="Permanent link: configure docker agent on jenkins master" data-icon="#">configure docker agent on jenkins master</a></h4>
+<p><strong>NOTE:</strong> The master needs to be configured to not run any jobs so that the jobs will run on the docker agents. Set the master under <strong>Manage Nodes</strong> to <em># of executors: 0</em>.</p>
+<p>Go to <strong>Manage Jenkins, Configure System, Cloud</strong> and select <em>Add a new cloud</em>.</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./addcloud.png" alt="" /></p>
+<p>Next, add the agent template to define the image to use:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./dockeragent.png" alt="" /></p>
+<p>In the above example, a popular image from evarga is used. You could, of course, either build your own based on his dockerfile, or just go from scratch.</p>
+<h2 id="the-continuous-integration..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#the-continuous-integration..." title="Permanent link: The continuous integration pipeline" data-icon="#">The continuous integration pipeline</a></h2>
+<p>The term <em>pipeline</em> refers to a sequence of automated operations representing a part of the SDLC process.</p>
+<ul>
+<li>operation grouping - these are stages (aka <em>gates</em> or <em>quality gates</em>). if one stage fails, teams are quickly notified and no further stages are run.</li>
+<li>visibility - all aspects of the process are visualized, helping in quick failure analysis</li>
+<li>feedback - teams learn about problems when they occur for quicker reaction</li>
+</ul>
+<p>Pipelining is a concept common to most CI tools. However, the naming can differ. In jenkins it is referred to as the pipeline.</p>
+<h3 id="the-jenkins-pipeline-structure" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#the-jenkins-pipeline-structure" title="Permanent link: The jenkins pipeline structure" data-icon="#">The jenkins pipeline structure</a></h3>
+<p>The jenkins pipeline is made up of <em>stages</em> and <em>steps</em>.</p>
+<ul>
+<li>stage - a group of steps. Stages such as <strong>build</strong>, <strong>test</strong> and <strong>deploy</strong> for example</li>
+<li>step - a single operation instructing jenkins to do something such as checkout from repo</li>
+</ul>
+<p>Here is the <em>hello world</em> pipeline with multiple stages:</p>
+<pre><code>pipeline {
+    agent any
+    stages {
+         stage('First Stage') {
+              steps {
+                   echo 'Step 1. Hello World'
+              }
+         }
+         stage('Second Stage') {
+              steps {
+                   echo 'Step 2. Second time Hello'
+                   echo 'Step 3. Third time Hello'
+              }
+         }
+    }
+}</code></pre>
+<p>This pipeline will execute 3 steps in 2 separate stages.</p>
+<h3 id="pipeline-syntax" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#pipeline-syntax" title="Permanent link: Pipeline syntax" data-icon="#">Pipeline syntax</a></h3>
+<p>There are 2 syntax methods for writing jenkins pipelines, <em>declarative</em> and <em>Groovy-based DSL</em>.</p>
+<ul>
+<li>declarative - an easier method limited to the most important keywords.</li>
+<li>DSL - a more scripted approach with more complexity and flexibility.</li>
+</ul>
+<p>Here is a more complex declarative pipeline, with descriptive comments of what is happening in each section:</p>
+<pre><code>pipeline {
+     agent any    # use any agent
+     triggers { cron('* * * * *') }   # triggered by cron definition (every minute)
+     options { timeout(time: 5) }   # stop execution if it takes more than 5 mins
+     parameters {
+          booleanParam(name: 'DEBUG_BUILD', defaultValue: true,   #ask for parameter input
+          description: 'Is it the debug build?')                  #for bool value
+     }
+     stages {
+          stage('Example') {
+               environment { NAME = 'Ron' }   # set an environment variable
+               when { expression { return params.DEBUG_BUILD } } # run if DEBUG_BUILD true
+               steps {
+                    echo "Hello from $NAME"   # Print "Hello from Ron"
+                    script {
+                         def browsers = ['chrome', 'firefox']   # execute a for loop
+                         for (int i = 0; i &lt; browsers.size(); ++i) {
+                              echo "Testing the ${browsers[i]} browser."
+                         }
+                    }
+               }
+          }
+     }
+     post { always { echo 'I will always say Hello again!' } }  # run echo always, regardless of success
+}</code></pre>
+<p>A declarative pipeline is always specified inside the <code>pipeline</code> block and contains <em>sections</em> <em>directives</em> and <em>steps</em>:</p>
+<p><strong>Sections</strong> define the pipeline structure and usually contain one or more directives or steps, and use the following keywords:</p>
+<ul>
+<li>stages - a series of one or more stages</li>
+<li>steps - a series of one or more instructions</li>
+<li>post - a series of one or more instructions run at the end of the pipeline. They are marked with a condition such as; <em>always</em> <em>success</em> or <em>failure</em>. They are usually used for sending notifications after the build.</li>
+</ul>
+<p><strong>Directives</strong> express the config of a pipeline or its parts:</p>
+<ul>
+<li>agent - specifies where the execution will take place, and can define a <em>label</em> to match agents, or <em>docker</em> to specify a container to be dynamically provisioned</li>
+<li>triggers - automated ways to trigger the pipeline such as <em>cron</em> or <em>pollSCM</em> to check a repo for changes.</li>
+<li>options - pipeline specific options such as <em>timeout</em>, or <em>retry</em> a number of times after failure.</li>
+<li>environment - a set of key values used as environment variables during the build.</li>
+<li>parameters - a list of user-input parameters</li>
+<li>stage - logical grouping of steps</li>
+<li>when - a conditional determining whether to run the stage</li>
+</ul>
+<p><strong>Steps</strong> are the operations that jenkins will perform.</p>
+<ul>
+<li>sh - execute the shell command, you can define almost any operation using it</li>
+<li>custom - something like echo, usually wrappers over the sh command. plugins can also define operations</li>
+<li>script - execute  a block of groovy code for things like flow control</li>
+</ul>
+<p>The pipeline syntax is very generic and usable for almost any process.</p>
+<p>The most common use case is implementing the CI server.</p>
+<h3 id="the-commit-pipeline" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#the-commit-pipeline" title="Permanent link: The commit pipeline" data-icon="#">The commit pipeline</a></h3>
+<p>The starting point of the CD process, triggered on every push to the main repo.</p>
+<p>Upon a checkin of code by a developer, a fundamental commit pipeline has 3 stages:</p>
+<ul>
+<li>checkout - download the code from repo</li>
+<li>compile - compile the source code</li>
+<li>unit test - run a suite of unit tests</li>
+</ul>
+<h3 id="create-a-ci-project-with-spring..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#create-a-ci-project-with-spring..." title="Permanent link: Create a CI project with spring and gradle" data-icon="#">Create a CI project with spring and gradle</a></h3>
+<p>This project is a calculator app built with Jave Spring.  It will have a pipeline of 3 stages:</p>
+<ul>
+<li><strong>checkout</strong> - check out the jave spring source code from git</li>
+<li><strong>compile</strong> - compile the code with <code>gradlew compileJava</code></li>
+<li><strong>unit test</strong> - test the code with <code>gladlew test</code></li>
+</ul>
+<p>The pipeline was first written in the jenkins GUI interface, then moved to a Jenkinsfile and checked into the repo, where jenkins will read it from and execute.</p>
+<h4 id="checkout-stage" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#checkout-stage" title="Permanent link: Checkout stage" data-icon="#">Checkout stage</a></h4>
+<p>Created the <strong>calculator</strong> git repo on Github. Then I cloned it locally and verified jenkins could access the repo.</p>
+<p>Added this stage to the project in jenkins:</p>
+<pre><code>pipeline {
+     agent any
+     stages {
+          stage("Checkout") {
+               steps {
+                    git url: 'https://github.com/roninhockley/calculator.git'
+               }
+          }
+     }
+}</code></pre>
+<p><strong>NOTE:</strong> This stage is not required in the Jenkinsfile as the checkout will have already been done.</p>
+<h4 id="compile-stage" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#compile-stage" title="Permanent link: Compile stage" data-icon="#">Compile stage</a></h4>
+<p>I then went to http://start.spring.io/ and used the GUI there to build the skeleton for the Java Spring app. Then downloaded the skeleton code to the git repo and pushed it.</p>
+<p>Added the compile stage to jenkins:</p>
+<pre><code>stage("Compile") {
+     steps {
+          sh "./gradlew compileJava"
+     }
+}</code></pre>
+<h4 id="unit-test-stage" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#unit-test-stage" title="Permanent link: Unit test stage" data-icon="#">Unit test stage</a></h4>
+<p>This involved creating the logic for the calculator, along with the unit test code.</p>
+<p>The logic code:</p>
+<pre><code>package com.nikkyrron.calculator;
+import org.springframework.stereotype.Service;
+
+@Service
+public class Calculator {
+     int sum(int a, int b) {
+          return a + b;
+     }
+}</code></pre>
+<p>Next a web service controller:</p>
+<pre><code>package com.nikkyrron.calculator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+class CalculatorController {
+     @Autowired
+     private Calculator calculator;
+
+     @RequestMapping("/sum")
+     String sum(@RequestParam("a") Integer a,
+                @RequestParam("b") Integer b) {
+          return String.valueOf(calculator.sum(a, b));
+     }
+}</code></pre>
+<p>Finally, the unit test code:</p>
+<pre><code>package com.nikkyrron.calculator;
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class CalculatorTest {
+     private Calculator calculator = new Calculator();
+
+     @Test
+     public void testSum() {
+          assertEquals(5, calculator.sum(2, 3));
+     }
+}</code></pre>
+<p>I then pushed the code to git repo, and added the unit test stage to jenkins:</p>
+<pre><code>stage("Unit test") {
+     steps {
+          sh "./gradlew test"
+     }
+}</code></pre>
+<p>Here is the final pipeline in Jenkins:</p>
+<pre><code>pipeline {
+     agent any
+     stages {
+          stage("Checkout") {
+               steps {
+                    git url: 'https://github.com/roninhockley/calculator.git'
+               }
+          }
+          stage("Compile") {
+               steps {
+                    sh "./gradlew compileJava"
+               }
+          }
+          stage("Unit test") {
+               steps {
+                    sh "./gradlew test"
+               }
+          }
+
+     }
+}</code></pre>
+<p><strong>The benefits of using a Jenkinsfile</strong></p>
+<p>Rather than have the pipeline defined on the Jenkins master itself, it can be written into a file called the Jenkinsfile, then checked into version control.</p>
+<p>The Jenkinsfile is a file containing the pipeline definition. The file is stored in the project's source code repo along with the source code itself. The obvious benefits include:</p>
+<ul>
+<li>protected in the event of a jenkins failure</li>
+<li>all changes are versioned and can have code review</li>
+<li>easily accessible by the developers who can control the tools defined in the pipeline</li>
+<li>access to the pipeline is restricted in the same way as the code itself</li>
+</ul>
+<p>The Jenkinsfile:</p>
+<pre><code>pipeline {
+     agent any
+     stages {
+          stage("Compile") {
+               steps {
+                    sh "./gradlew compileJava"
+               }
+          }
+          stage("Unit test") {
+               steps {
+                    sh "./gradlew test"
+               }
+          }
+     }
+}</code></pre>
+<p>While this is a minimal project, it is, in many cases, sufficient for the continuous integration process.</p>
+<h3 id="improve-the-calculator-commit..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#improve-the-calculator-commit..." title="Permanent link: Improve the calculator commit pipeline with code quality stages" data-icon="#">Improve the calculator commit pipeline with code quality stages</a></h3>
+<h4 id="code-coverage-testing" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#code-coverage-testing" title="Permanent link: Code coverage testing" data-icon="#">Code coverage testing</a></h4>
+<p>Code coverage testing is used to assess <em>how much</em> of the code is being tested. It runs all tests and generates a report showing the <em>untested</em> sections. The build can be marked failure if too much code remains untested.</p>
+<p>Three popular tools are <strong>JaCoCo, Clover, and Cobertura</strong>. We will use JaCoCo.</p>
+<ul>
+<li>add JaCoCo to the Gradle config</li>
+<li>add the code coverage stage to the pipeline</li>
+<li>push JaCoCo reports in jenkins</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ul>
+<li>Add <code>apply plugin: "jacoco"</code> to the <strong>build.gradle</strong> file.</li>
+<li>
+<p>add the following to <strong>build.gradle</strong> to set minimum code coverage to <em>20%</em>:</p>
+<p>jacocoTestCoverageVerification {
+violationRules {
+rule {
+limit {
+minimum = 0.2
+}
+}
+}
+}</p>
+</li>
+<li>
+<p>add the following stage to the Jenkinsfile:</p>
+<p>stage("Code coverage") {
+steps {
+sh "./gradlew jacocoTestReport"
+publishHTML (target: [
+reportDir: 'build/reports/jacoco/test/html',
+reportFiles: 'index.html',
+reportName: "JaCoCo Report"
+])
+sh "./gradlew jacocoTestCoverageVerification"
+}
+}</p>
+</li>
+</ul>
+<p><strong>NOTE:</strong> the stage above requires the <strong>HTML Publisher</strong> plugin for jenkins.</p>
+<h4 id="static-code-analysis" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#static-code-analysis" title="Permanent link: Static code analysis" data-icon="#">Static code analysis</a></h4>
+<p>After adding code coverage testing, there are tests for the code quality itself. Is it well written and maintainable?</p>
+<p>Statis code testing does not execute the code, instead it checks for syntax quality against certain rules.</p>
+<p>3 popular tools for this are <strong>Checkstyle, Findbugs, and PMD</strong>. We will use Checkstyle.</p>
+<p><strong> Static code analysis using Checkstyle</strong></p>
+<ul>
+<li>add the Checkstyle config</li>
+<li>add the Checkstyle stage</li>
+<li>publish the Checkstyle report in jenkins</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ul>
+<li>
+<p>Create folder path <strong>config/checkstyle</strong> in the calculator git folder and add the following to checkstyle.xml:</p>
+<p>&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE module PUBLIC
+"-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+"http://www.puppycrawl.com/dtds/configuration_1_2.dtd"&gt;</p>
+<module name="Checker">
+     <module name="TreeWalker">
+          <module name="JavadocType">
+               <property name="scope" value="public"/>
+          </module>
+     </module>
+</module>
+</li>
+<li>Add <code>apply plugin: 'checkstyle'</code> to <strong>build.gradle</strong></li>
+<li>
+<p>add the following stage to the Jenkinsfile:</p>
+<p>stage("Static code analysis") {
+steps {
+sh "./gradlew checkstyleMain"
+publishHTML (target: [
+reportDir: 'build/reports/checkstyle/',
+reportFiles: 'main.html',
+reportName: "Checkstyle Report"
+])
+}
+}</p>
+</li>
+</ul>
+<p><strong>NOTE:</strong> A more robust server-based tool is <strong>Sonarqube</strong> which combines the code coverage and analysis process together.</p>
+<h3 id="triggers-and-notifications" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#triggers-and-notifications" title="Permanent link: Triggers and notifications" data-icon="#">Triggers and notifications</a></h3>
+<h4 id="triggers" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#triggers" title="Permanent link: Triggers" data-icon="#">Triggers</a></h4>
+<p>Rather than having to start each build from jenkins, the builds can run automatically with triggers. An automatic action that starts a build is called a <strong>pipeline trigger</strong>.</p>
+<p>There are many options in jenkins for triggers, but they all come down to 3 types:</p>
+<ul>
+<li>external</li>
+<li>polling SCM (source control management)</li>
+<li>scheduled build</li>
+</ul>
+<p><strong>External triggers</strong></p>
+<p>An external trigger means that jenkins is called by a <strong>notifier</strong>, which is another pipeline build, the SCM system, or any remote script.</p>
+<p>In the case of GitHub for example, setting up the external trigger involves:</p>
+<ul>
+<li>installing the github plugin in jenkins</li>
+<li>generating a secret key for jenkins</li>
+<li>setting a webhook on github with the jenkins address and key</li>
+</ul>
+<p>There is also a more generic way using the jenkins REST API. It requires a <em>token</em> setting in jenkins.</p>
+<p><strong>NOTE:</strong> For either the github or REST call the jenkins server must be publicly accessible.</p>
+<p><strong>Polling SCM</strong></p>
+<p>A slightly less intuitive approach is polling the SCM system for changes. Jenkins periodically calls the SCM to check for changes in the source code.</p>
+<p>There are however 2 good cases for this:</p>
+<ul>
+<li>jenkins is firewalled and not accessible by SCM</li>
+<li>commits are frequent and builds are long, which would overload the server if triggered immediately</li>
+</ul>
+<p>Since jenkins is already configured to access github for our calculator project, the setup for polling is simpler, by simply adding the <strong>triggers</strong> statement to the jenkinsfile, just after the <code>agent</code> line:</p>
+<pre><code>triggers {
+     pollSCM('H/5 * * * *')
+}</code></pre>
+<p>The example above is standard cron syntax and will poll every 5 minutes.
+<strong>NOTE:</strong> The <strong>H/5</strong> will spread it out evenly to reduce stress on jenkins.</p>
+<p><strong>Scheduled build</strong></p>
+<p>This simply means the job is set to run on a specific schedule, defined by the <code>cron</code> keyword instead of <code>pollSCM</code>. This method is rarely used for the commit pipeline, but is well suited for nightly builds such as complex integration testing.</p>
+<h4 id="notifications" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#notifications" title="Permanent link: Notifications" data-icon="#">Notifications</a></h4>
+<p>There are several ways to announce build status, and new notification types can be added via plugins.</p>
+<p>The most popular notification types are:</p>
+<ul>
+<li>email</li>
+<li>group chat</li>
+<li>team spaces</li>
+</ul>
+<p><strong>email</strong></p>
+<p>Notifications via email is the most common method, involves setting SMTP server details in <code>Configure System</code> and using the <code>mail to</code> statement in the <code>post</code> section of the pipeline as follows:</p>
+<pre><code>post {
+     always {
+          mail to: 'team@company.com',
+          subject: "Completed Pipeline: ${currentBuild.fullDisplayName}",
+          body: "Your build completed, please check: ${env.BUILD_URL}"
+     }
+}</code></pre>
+<p><strong>NOTE:</strong> There are several options besides <code>always</code>:</p>
+<ul>
+<li>always - always send</li>
+<li>changed - send only if pipeline status has changed</li>
+<li>failure - only if the pipeline status is <code>failed</code></li>
+<li>success - only if the pipeline status is <code>success</code></li>
+<li>unstable - only if the pipeline status is <code>unstable</code></li>
+</ul>
+<p><strong>group chat</strong></p>
+<p>Apps such as slack or hipchat are worth considering for adding build notifications. The process for each is the same:</p>
+<ul>
+<li>install plugin</li>
+<li>configure the plugin</li>
+<li>
+<p>add instruction to pipeline as follows:</p>
+<p>post {
+failure {
+slackSend channel: '#dragons-team',
+color: 'danger',
+message: "The pipeline ${currentBuild.fullDisplayName} failed."
+}
+}</p>
+</li>
+</ul>
+<p><strong>team spaces</strong></p>
+<p>This involves methods such as installing big screens called <em>build radiators</em> which display the current pipeline status on a big screen.</p>
+<p>There are also plugins for things like RSS, SMS, mobile, and desktop notifiers.</p>
+<h3 id="team-development-workflows" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#team-development-workflows" title="Permanent link: Team development workflows" data-icon="#">Team development workflows</a></h3>
+<p>Questions like when the CI pipeline should be run, or which branches should trigger it, or whether there are branches at all, are issues that make up the development workflow.</p>
+<p>There are basically 3 types of workflows:</p>
+<ul>
+<li>trunk-based workflow - the simplets possible strategy</li>
+<li>branching workflow - used when the code is kept in several different branches</li>
+<li>forking workflow - popular with open source projects where commit access is restricted</li>
+</ul>
+<h4 id="trunk-based-workflow" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#trunk-based-workflow" title="Permanent link: Trunk-based workflow" data-icon="#">Trunk-based workflow</a></h4>
+<p>Simply put, in this workflow there is one master branch and all commits go directly there.</p>
+<h4 id="branching-workflow" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#branching-workflow" title="Permanent link: Branching workflow" data-icon="#">Branching workflow</a></h4>
+<p>The code is kept in several different branches such as feature, develop and master. Developers work on new code in feature branches, and jenkins will test the code in the branches.</p>
+<p>When all tests are successful, the developers can rebase the branch to master then submit a pull request so the team can review changes and, finally, merge the code into master.</p>
+<p>Jenkins will run the build on master with new changes merged to ensure success, which is likely since it was already tested on the feature branch.</p>
+<h4 id="forking-workflow" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#forking-workflow" title="Permanent link: Forking workflow" data-icon="#">Forking workflow</a></h4>
+<p>In a forking workflow, developers fork the entire repo to a new repo, rather than creating branches. This is popular with open source projects since they involve worldwide participation without having write access.</p>
+<p>In this workflow, when changes are ready the developers will submit a pull request to have their changes merged to the origin repo's master branch.</p>
+<h3 id="workflow-effect-on-the-ci..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#workflow-effect-on-the-ci..." title="Permanent link: Workflow effect on the CI process" data-icon="#">Workflow effect on the CI process</a></h3>
+<p>How do the above mentioned workflows affect the CI configuration? Each of the workflows implies a different CI approach.</p>
+<h4 id="trunk-based" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#trunk-based" title="Permanent link: Trunk based" data-icon="#">Trunk based</a></h4>
+<p>This will stress the CI process with frequent pipeline failures. It causes the dev team to stop and fix the problems immediately.</p>
+<h4 id="branching" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#branching" title="Permanent link: Branching" data-icon="#">Branching</a></h4>
+<p>This method solves the stress of the broken master branch issue but introduces another one. With everyone developing on their own branch where is the integration?</p>
+<p>When features take a while to develop, the feature and master branches will diverge, and merge conflicts arise. This begins to strain the limits of calling it continuous integration.</p>
+<h4 id="forking" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#forking" title="Permanent link: Forking" data-icon="#">Forking</a></h4>
+<p>This involved managing the CI process by every repo owner, which in and of itself is not usually a problem, but it does have the same issue as branching.</p>
+<p>Different organizations take different approaches to these issues, and the closest to perfection is a hybrid using branching with the philosophy of trunk-based. This means very small branches and frequent integration to master.</p>
+<p>Facilitating this requires either very small features or using <em>feature toggles</em>.</p>
+<p><strong>feature toggles</strong></p>
+<p>The feature toggle method involves putting new features directly in the main code in master, but with conditionals like so:</p>
+<ul>
+<li>a boolean such as <strong>feature_toggle</strong> is set to <em>True</em></li>
+<li>code is added in <code>if</code> statements to run when True</li>
+<li>development is done from master with True.</li>
+<li>releases are done with <strong>feature toggle</strong> set to false.</li>
+<li>when the feature development is complete, the boolean and all <code>if</code> statements are removed, which automatically triggers the new features without having to merge any branch into master.</li>
+</ul>
+<p>The benefit of this approach is all development being done in trunk, which allows for continuous integration of all code and mitigates merge conflicts from branches.</p>
+<h3 id="jenkins-multi-branch-pipelines" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#jenkins-multi-branch-pipelines" title="Permanent link: Jenkins multi-branch pipelines" data-icon="#">Jenkins multi-branch pipelines</a></h3>
+<p>If using any form of branching, jenkins has the <strong>Multibranch Pipeline</strong> which will test code in branches before merging it into master. This is a good way to keep the master code base green.</p>
+<p>The Multibranch Pipeline in jenkins will check for branches being created or removed at a set interval, and will either create or delete the dedicated pipeline specified in the Jenkinsfile.</p>
+<h2 id="automated-acceptance-testing" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#automated-acceptance-testing" title="Permanent link: Automated acceptance testing" data-icon="#">Automated acceptance testing</a></h2>
+<p>Acceptance testing is performed to determine whether the software meets the business requirements or contracts. It is black box testing against a complete system from a user perspective. If the results are positive it should mean the acceptance of the software when delivered.</p>
+<p>Other terms for acceptance testing are:</p>
+<ul>
+<li>user acceptance testing (UAT)</li>
+<li>end user testing</li>
+<li>beta testing</li>
+</ul>
+<h3 id="the-artifact-repository" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#the-artifact-repository" title="Permanent link: The artifact repository" data-icon="#">The artifact repository</a></h3>
+<p>Artifacts are things like compiled libraries or components which are later used to build complete app. They should be stored on separate servers due to the nature of the files and the access needed.</p>
+<ul>
+<li>large file sizes</li>
+<li>versioning, where some with detected bugs may not be kept</li>
+<li>each artifact should point to exactly one revision of the source code, and the binary creation process should be repeatable</li>
+<li>packages - artifacts are stored in compiled and compressed form, so that these time consuming steps are not repeated</li>
+<li>access control - users are restricted differently that with source code</li>
+<li>clients - users can be developers outside the team or organization</li>
+<li>use cases - artifact binaries guarantee that exactly the same built version is deployed to every environment to ease rollbacks if failures occur</li>
+</ul>
+<p>The most popular artifact repos are <strong>JFrog Artifactory</strong> and <strong>Sonatype Nexus</strong>.</p>
+<p>The following diagram illustrates the artifact repo's role in the CD process:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./artifactory.png" alt="" /></p>
+<p>As the last step of the build stage, a binary is built and pushed to the artifact repo. All subsequent stages pull and use that binary.</p>
+<p>The process of moving the binary to the next stage is called <em>promotion</em>.</p>
+<p>As binary formats differ by programming language and technologies, there are various types of binaries, such as JAR files for Java, Gem files for Ruby, and for our case working with docker we will be producing docker images. The tool for storing these images is Docker registry.</p>
+<h3 id="implement-local-docker-registry" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#implement-local-docker-registry" title="Permanent link: Implement local docker registry" data-icon="#">Implement local docker registry</a></h3>
+<p>The 2 more common methods of using docker registry are either the cloud-based Docker Hub, or a private docker registry.</p>
+<p>Installing the docker registry app is just a matter of running a docker image named <code>registry</code>. If running it on the same docker host as jenkins no further steps are necessary.</p>
+<p>If running on a dedicated server, the server must be secured with SSL/TLS with a cert.
+<strong>NOTE</strong> Not strictly required, you can add an exception to any docker host via <code>/etc/docker/daemon.json</code>. This is covered further down in this book.</p>
+<p>Since we are running it local to jenkins we can run it with:</p>
+<p><code>docker run -d -p 5000:5000 --restart=always --name registry registry:2</code></p>
+<p><strong>NOTE:</strong> Repository servers such as Artifactory and Nexus implement the docker registry API. These servers can store docker images along with other artifacts as well.</p>
+<p>Cloud services such as GCE and AWS offer docker registries also.</p>
+<p>Next I retagged my <code>roninhockley/slave</code> image and pushed it to the loca repo and reconfigured the docker agent template in jenkins to be <code>localhost:5000/slave</code> and now it pulls the agent from the local repo.</p>
+<h3 id="run-acceptance-testing-in-the..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#run-acceptance-testing-in-the..." title="Permanent link: Run acceptance testing in the pipeline" data-icon="#">Run acceptance testing in the pipeline</a></h3>
+<p>Implementing acceptance testing in the pipeline will involve 4 new stages in the pipeline:</p>
+<ul>
+<li>docker build - jenkins will checkout the new commit, compile it and put it in a newly built docker image</li>
+<li>docker push - jenkins will push the newly built image to the local registry created above</li>
+<li>deploy to staging - start a container running the calculator app exposing port 8765</li>
+<li>acceptance test - the staging environment will run the acceptance tests against the running app, using the image jenkins pushed to the registry.</li>
+</ul>
+<p>This will involve a dynamically provisioned docker slave using docker to build the testing image (docker in docker). There is not a mature docker image available yet on docker hub, so I am pulling one from the instructor repo and retagging and pushing it to local registry.</p>
+<p><strong>NOTE:</strong> To get the docker enabled agent to work I had to bind mount the docker socket to the agent by adding:  <code>-v /var/run/docker.sock:/var/run/docker.sock</code> to the container template in Jenkins config.</p>
+<p><strong>ALSO:</strong> The acceptance testing is a bash script in the root of the project. It is executed by the slave, but from the course it was doing a curl to <em>localhost:8765</em>, this does not work, I changed it to <em>docker:8765</em> so it would point correctly to the docker host, and use the port mapping illustrated above. Not sure why instructor thought that <em>localhost</em> would work, it did not.</p>
+<p><strong>steps</strong></p>
+<p>create Dockerfile in the root directory of the project:</p>
+<pre><code>FROM openjdk:8-jre
+COPY build/libs/calculator-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]</code></pre>
+<p>Modify Jenkinsfile with new stages:</p>
+<pre><code>pipeline {
+agent any
+ triggers {
+ pollSCM('H/5 * * * *')
+}
+ stages {
+      stage("Compile") {
+           steps {
+                sh "./gradlew compileJava"
+           }
+      }
+      stage("Unit test") {
+           steps {
+                sh "./gradlew test"
+           }
+      }
+      stage("Code coverage") {
+           steps {
+                sh "./gradlew jacocoTestReport"
+                publishHTML (target: [
+                reportDir: 'build/reports/jacoco/test/html',
+                reportFiles: 'index.html',
+                reportName: "JaCoCo Report"
+      ])
+      sh "./gradlew jacocoTestCoverageVerification"
+            }
+      }
+      stage("Static code analysis") {
+           steps {
+                sh "./gradlew checkstyleMain"
+                publishHTML (target: [
+                reportDir: 'build/reports/checkstyle/',
+                reportFiles: 'main.html',
+                reportName: "Checkstyle Report"
+      ])
+            }
+      }
+      stage("Package") {
+           steps {
+                sh "./gradlew build"
+           }
+      }
+      stage("Docker build") {
+           steps {
+                sh "docker build -t localhost:5000/calculator ."
+           }
+      }
+      stage("Docker push") {
+           steps {
+                sh "docker push localhost:5000/calculator"
+           }
+      }
+      stage("Deploy to staging") {
+           steps {
+                sh "docker run -d --rm -p 8765:8080 --name calculator localhost:5000/calculator"
+           }
+      }
+      stage("Acceptance test") {
+           steps {
+                sleep 15
+                sh "chmod +x acceptance_test.sh &amp;&amp; ./acceptance_test.sh"
+           }
+      }
+   }
+      post {
+   always {
+        sh "docker stop calculator"
+   }
+}
+
+}</code></pre>
+<h3 id="writing-acceptance-tests" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#writing-acceptance-tests" title="Permanent link: Writing acceptance tests" data-icon="#">Writing acceptance tests</a></h3>
+<p>Acceptance tests are written with users in mind and should be comprehensible to users. Since the end user varies by project, the tools for acceptance testing can vary.</p>
+<p>In most cases, the business value defined for software acceptance is written by non-developers, and so the testing should be comprehensible to them.</p>
+<p>There are several frameworks that help to bridge the gap, including <strong>Cucumber</strong>, <strong>FitNesse</strong>, <strong>JBehave</strong>, and <strong>Capybara</strong>. These tools differ from each other.
+In general the idea of writing acceptance tests follows this diagram:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./testing.png" alt="" /></p>
+<p>The <em>Acceptance Criteria</em> are written by users or a product owner as their representative, with the help of developers. Usually in the following scenario:</p>
+<pre><code>Given I have two numbers: 1 and 2
+When the calculator sums them
+Then I receive 3 as a result</code></pre>
+<p>Developers write the test implementation, called <em>Fixtures</em> or <em>step definitions</em>. They integrate the human-friendly DSL (domain specific language) with the programming language.</p>
+<p>Writing acceptance tests is a continuous process requiring constant collaboration between developers and business, to improve and maintain the test specs.</p>
+<h3 id="use-the-cucumber-framework-to..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#use-the-cucumber-framework-to..." title="Permanent link: Use the Cucumber framework to write acceptance tests" data-icon="#">Use the Cucumber framework to write acceptance tests</a></h3>
+<p>This will be done in 3 stages:</p>
+<ul>
+<li>create acceptance criteria</li>
+<li>create step definitions (fixtures)</li>
+<li>run an automated acceptance test</li>
+</ul>
+<h4 id="create-acceptance-criteria" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#create-acceptance-criteria" title="Permanent link: Create acceptance criteria" data-icon="#">Create acceptance criteria</a></h4>
+<p>Create a file in <code>src/test/resources/feature/calculator.feature</code> with the following:</p>
+<pre><code>Feature: Calculator
+  Scenario: Sum two numbers
+    Given I have two numbers: 1 and 2
+    When the calculator sums them
+    Then I receive 3 as a result</code></pre>
+<p>Easy to understand and written by users with the help of developers in a way that is easy for non-technical people to understand.</p>
+<h4 id="create-step-definitions" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#create-step-definitions" title="Permanent link: Create step definitions" data-icon="#">Create step definitions</a></h4>
+<p>The next step is to create the Java bindings so that the feature specification would be executable. In order to do this, we create a new file, <code>src/test/java/acceptance/StepDefinitions.java</code> with the following contents:</p>
+<pre><code>package acceptance;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import org.springframework.web.client.RestTemplate;
+
+import static org.junit.Assert.assertEquals;
+
+/** Steps definitions for calculator.feature */
+public class StepDefinitions {
+    private String server = System.getProperty("calculator.url");
+
+    private RestTemplate restTemplate = new RestTemplate();
+
+    private String a;
+    private String b;
+    private String result;
+
+    @Given("^I have two numbers: (.*) and (.*)$")
+    public void i_have_two_numbers(String a, String b) throws Throwable {
+        this.a = a;
+        this.b = b;
+    }
+
+    @When("^the calculator sums them$")
+    public void the_calculator_sums_them() throws Throwable {
+        String url = String.format("%s/sum?a=%s&amp;b=%s", server, a, b);
+        result = restTemplate.getForObject(url, String.class);
+    }
+
+    @Then("^I receive (.*) as a result$")
+    public void i_receive_as_a_result(String expectedResult) throws Throwable {
+        assertEquals(expectedResult, result);
+    }
+}</code></pre>
+<p>The above Java code matches the <strong>Given, When, and Then</strong> lines from the feature spec.</p>
+<p>In order to run the automated test, we need to configure some things:</p>
+<ul>
+<li>
+<p>add the Cucumber libraries to <code>build.gradle</code> dependencies section:</p>
+<p>testImplementation("io.cucumber:cucumber-java:4.2.6")
+testImplementation("io.cucumber:cucumber-junit:4.2.6")</p>
+</li>
+<li>
+<p>add the <em>Gradle target</em> to the same file:</p>
+<p>task acceptanceTest(type: Test) {
+include '<strong>/acceptance/</strong>'
+systemProperties System.getProperties()
+}</p>
+<p>test {
+exclude '<strong>/acceptance/</strong>'
+}</p>
+</li>
+<li>
+<p>add a <em>JUnit runner</em>, new file <code>src/test/java/acceptance/AcceptanceTest.java</code>:</p>
+<p>package acceptance;</p>
+<p>import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;</p>
+<p>/*<em> Acceptance Test </em>/
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "classpath:feature")
+public class AcceptanceTest { }</p>
+</li>
+</ul>
+<p>The above <em>JUnit runner</em> is the entry point to the acceptance test suite.</p>
+<h4 id="acceptance-testing-drives..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#acceptance-testing-drives..." title="Permanent link: Acceptance testing drives development" data-icon="#">Acceptance testing drives development</a></h4>
+<p>Like most aspects of the CD process, acceptance testing is less about technology and more about people, specifically the level of engagement of users and developers.</p>
+<p>What may be less obvious though, is <em>when to create</em> the tests. Should the acceptance tests be created before or after writing the code?</p>
+<p>From a technical standpoint, the result will be the same; the code will be well covered with both unit and acceptance testing.</p>
+<p>It is tempting to write the tests first. <em>Test-driven development</em> is well adapted for acceptance testing already, as the resulting feature will correspond better to the customer need.</p>
+<p>Also, if the unit tests are written beforehand, the resulting code will be cleaner, better structured and well thought out.</p>
+<p>This process is often called <em>acceptance test-driven development</em>.</p>
+<p>This is illustrated in the following diagram:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./tdd.png" alt="" /></p>
+<ul>
+<li>User and developers write the DSL easy-to-read acceptance criteria</li>
+<li>the developers write the acceptance test fixtures (code), and they obviously fail.</li>
+<li>next, feature development uses the same test-drive methodology with unit testing</li>
+<li>the code is refactored until it passes.</li>
+<li>at this point the acceptance tests should also pass. the feature is complete.</li>
+</ul>
+<p>A very good practice is to attach the Cucumber feature specification to the request ticket in the issue tracking tool (JIRA), so that the feature is always requested together with its acceptance test.</p>
+<p>Some developers take an even more hardline approach and refuse to begin development until acceptance tests are prepared.</p>
+<h2 id="clustering-with-kubernetes" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#clustering-with-kubernetes" title="Permanent link: Clustering with Kubernetes" data-icon="#">Clustering with Kubernetes</a></h2>
+<p>This section will be about using Kubernetes for the staging and production environments of the continuous delivery process.</p>
+<h3 id="advanced-kubernetes-concepts" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#advanced-kubernetes-concepts" title="Permanent link: Advanced Kubernetes concepts" data-icon="#">Advanced Kubernetes concepts</a></h3>
+<h4 id="scaling" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#scaling" title="Permanent link: Scaling" data-icon="#">Scaling</a></h4>
+<p>The quick manual scaling method:</p>
+<p><code>$ kubectl scale --replicas 5 deployment calculator-deployment</code></p>
+<p>For autoscaling, check out the <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">Horizontal Pod Autoscaler</a>.</p>
+<h4 id="updating-an-application" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#updating-an-application" title="Permanent link: Updating an application" data-icon="#">Updating an application</a></h4>
+<p>In simplest form, just change the deployment yamlfile. When you apply the new file it will alter the deployment to match.</p>
+<p>This can be something subtle like adding a label in metadata or updating the app itself, thus creating a new docker image and changing the container spec in the deployment.</p>
+<h4 id="rolling-updates" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#rolling-updates" title="Permanent link: Rolling updates" data-icon="#">Rolling updates</a></h4>
+<p>A rolling update entails terminating old instances and starting new ones in an incremental fashion. For each instance, one by one:</p>
+<ul>
+<li>terminate the pod</li>
+<li>start a newer version of the pod to replace the old pod</li>
+<li>wait until the new pod is ready</li>
+<li>move on to the next pod</li>
+</ul>
+<p><strong>NOTE</strong> Rolling updates only work if the new versions are backward compatible with the old ones, because until the update is finished the old and the new versions must coexist.</p>
+<p>Rolling updates are configured in the deployment yaml file.</p>
+<p>Here is a deployment for the calculator app currently used in the jenkins pipeline. The deployment is configured for rolling updates:</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-deployment
+  labels:
+    app: calculator
+spec:
+  replicas: 5
+  strategy:
+    type: RollingUpdate   # here is the section for specifying a rolling update
+    rollingUpdate:
+      maxUnavailable: 25%  # no more than 1 pod unavailable
+      maxSurge: 0         # amount of pods created over the replica count
+  selector:                 # 0 means no new pod without deleting old one first
+    matchLabels:
+      app: calculator
+  template:
+    metadata:
+      labels:
+        app: calculator
+    spec:
+      containers:
+      - name: calculator
+        image: leszko/calculator
+        ports:
+        - containerPort: 8080
+        readinessProbe:     # readinessProbe to ensure pods are ready
+          httpGet:          # the probe will test the calculator app over http
+             path: /sum?a=1&amp;b=2 # the endpoint of the container for the test
+             port: 8080</code></pre>
+<p>The <code>maxUnavailable</code> and <code>maxSurge</code> parameters specifically control how kubernetes will perform the update with respect to the replacement of the pods. They control the minimum pods that must be running during the upgrade and whether kubernetes can deploy new pods on top of the number of old pods running.</p>
+<p>Now that we have a rolling update deployment configured we can provide zero downtime releases from the pipeline.
+<strong>NOTE</strong> With <code>Statefulset</code> deployments, rolling updates are already enabled, without any additional configuration.</p>
+<p>Rolling updates are obviously very important with continuous delivery. CI means frequent deployments, and thus we cannot afford any downtime.</p>
+<p>Notes about kubernetes workloads and objects:</p>
+<ul>
+<li>deployment - the most common workload</li>
+<li>statefulset - specifies exactly n number of pods, with predictable names, and the order they are started</li>
+<li>daemonset - runs a copy of a pod on each node</li>
+<li>
+<p>job/cronjob - a workflow dedicated to task based operations in which containers are expected to exit successfully</p>
+<h3 id="resolving-application..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#resolving-application..." title="Permanent link: Resolving application dependencies with k8s" data-icon="#">Resolving application dependencies with k8s</a></h3>
+<p>Dependencies arise from either a monolithic app which usually at least needs a database, or a micro services architecture where many interconnected services make up the app.</p>
+<p>Within the automated testing part of the continuous delivery process, the unit testing phase allows you to mock (fake) the app dependencies to get it done. The acceptance testing, however, requires a complete environment for a viable result.</p>
+<p>Kubernetes orchestration allows for a fast and repeatable deployment of a complete environment, thanks largely to its built-in DNS resolution for services and pods.</p>
+</li>
+</ul>
+<h4 id="kubernetes-dns-resolution" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#kubernetes-dns-resolution" title="Permanent link: Kubernetes DNS resolution" data-icon="#">Kubernetes DNS resolution</a></h4>
+<p>As a demonstration, we will deploy an in memory caching solution called <strong>Hazelcast</strong> to kubernetes, and make it available to other services in the cluster, such as the calculator deployment already running in the cluster.</p>
+<div class="notices blue">
+<p>Hazelcast is an <strong>IMDG</strong> or <em>in memory data grid</em>, powered by Java, that is used to cache frequently used data in memory for fast access by applications.</p>
+</div>
+<p><strong>Deploy Hazelcast to the cluster</strong></p>
+<p>Here is the deployment with the service included:</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hazelcast
+  labels:
+    app: hazelcast
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hazelcast
+  template:
+    metadata:
+      labels:
+        app: hazelcast
+    spec:
+      containers:
+      - name: hazelcast
+        image: hazelcast/hazelcast:3.12
+        ports:
+        - containerPort: 5701
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hazelcast
+spec:
+  selector:
+    app: hazelcast
+  ports:
+  - port: 5701</code></pre>
+<p>Since we know the name of the service is <strong>hazelcast</strong> we can supply it to apps for use, and kubernetes will use its in-built dns to resolve the service name.</p>
+<p>Before configuring the calculator app to use Hazelcast, here is the intended system to be put in place:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./hazelcast.png" alt="" />
+The user will use the calculator service, which will load balance the traffic to a calculator pod. Next, the calculator pod connects to the hazelcast service, and that service will redirect to the hazelcast pod.</p>
+<p>The final work to be done is to include the code that allows the calculator app to use hazelcast caching:</p>
+<ul>
+<li>add the hazelcast client library to gradle</li>
+<li>add the hazelcast cache config</li>
+<li>add sprint boot caching</li>
+<li>build the docker image</li>
+</ul>
+<p><strong>add the hazelcast client library to gradle</strong></p>
+<p>Add the following to the _dependencies section of the <code>build.gradle</code> file:</p>
+<p><code>implementation 'com.hazelcast:hazelcast-all:3.12'</code></p>
+<p>This adds the java libraries needed for communication with hazelcast.</p>
+<p><strong>add the hazelcast cache config</strong></p>
+<p>Add the following parts to the <code>src/main/java/com/leszko/calculator/CalculatorApplication.java</code> file:</p>
+<pre><code>package com.nikkyrron.calculator;
+import com.hazelcast.client.config.ClientConfig;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
+
+/**
+ * Main Spring Application.
+ */
+@SpringBootApplication
+@EnableCaching
+public class CalculatorApplication {
+
+public static void main(String[] args) {
+      SpringApplication.run(CalculatorApplication.class, args);
+   }
+
+@Bean
+public ClientConfig hazelcastClientConfig() {
+      ClientConfig clientConfig = new ClientConfig();
+      clientConfig.getNetworkConfig().addAddress("hazelcast");
+return clientConfig;
+   }
+}
+
+This is a standard Spring cache configuration. Note that for the Hazelcast server address, we use _hazelcast_, which is automatically available thanks to the Kubernetes DNS resolution.</code></pre>
+<p><strong>NOTE:</strong> You actually don't need to specify the service name, Hazelcast provides an auto-discovery plugin for kubernetes.</p>
+<p><strong>add sprint boot caching</strong></p>
+<p>Modify the <code>src/main/java/com/leszko/calculator/Calculator.java</code> file as follows:</p>
+<pre><code>package com.nikkyrron.calculator;
+
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
+
+/** Calculator logic */
+@Service
+public class Calculator {
+@Cacheable("sum")
+public int sum(int a, int b) {
+try {
+         Thread.sleep(3000);
+      }
+catch (InterruptedException e) {
+         e.printStackTrace();
+      }
+
+return a + b;
+   }
+}</code></pre>
+<p>The <code>@Cacheable</code> annotation will make spring cache every call to the <em>sum</em> method. The sleep for 3 seconds is for testing to see that the cache works correctly.</p>
+<p>The sum calculations are cached in Hazelcast, and when we call the <strong>/sum</strong> endpoint of the Calculator web service, it will first try to retrieve the result from the cache.</p>
+<p><strong>build the docker image</strong></p>
+<p>The next step is to rebuild the calculator app and the docker image with a new tag, then push it to the registry.</p>
+<p><strong>NOTE:</strong> Implementing this is blocked because the k8s nodes are not on our DNS and cannot resolve the <em>docker</em> hostname to pull the images from my local docker registry. I have modified the Ubuntu k8s nodes to use internal DNS.</p>
+<p><strong>UPDATE:</strong> A few things had to be done to get this working. There were a few problems:</p>
+<ul>
+<li>the nodes were not on our DNS so I rebuilt the cluster with Debian and set DNS to our server, so the deployments could pull images from the private registry.</li>
+<li>Any docker node needs to have a JSON file in place to allow connecting to an unsecured registry: <code>nano /etc/docker/daemon.json</code> (this will be a new file).</li>
+</ul>
+<p>Add the following to the file:</p>
+<pre><code>{
+  "insecure-registries" : ["docker:5000"]
+}</code></pre>
+<p>After taking these steps, the nodes can call the registry by its DNS name <strong>docker</strong> and the nodes will accept the connection from our unsecured private registry, which is a container running on the <strong>docker</strong> host.</p>
+<p>Now, the calculator app is running on the cluster with Hazelcast providing caching.</p>
+<p>Of course, having changed the build by adding in the hazelcast code, the pipeline is broken on jenkins. This is to be expected.</p>
+<p><strong>UPDATE</strong> I created a new branch called legacy and based it off the commit before I added the hazelcast code. Next I copied the repo to Bitbucket.</p>
+<p>I created a new jenkins multibranch pipeline and pointed it to bitbucket, as expected the legacy branch builds successfully.</p>
+<h2 id="configuration-management-with..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#configuration-management-with..." title="Permanent link: Configuration management with Ansible" data-icon="#">Configuration management with Ansible</a></h2>
+<p>Installed Ansible on my local machine with:</p>
+<pre><code>$ sudo apt-get install software-properties-common
+$ sudo apt-add-repository ppa:ansible/ansible
+$ sudo apt-get update
+$ sudo apt-get install ansible</code></pre>
+<p>Next I created 2 vm's from Debian 9.9 to use as hosts. Vanilla installs with some packages added:</p>
+<p><code>apt install sudo curl nmap build-essential</code></p>
+<p>Next I created an Ansible hosts file at <code>/etc/ansible/hosts</code>:</p>
+<pre><code>[webservers]
+web1 ansible_host=192.168.1.103 ansible_user=ron
+web2 ansible_host=192.168.1.126 ansible_user=ron</code></pre>
+<p>The <em>web1</em> and <em>web2</em> are aliases.</p>
+<p>I then executed a <code>ansible all -m ping</code> to test and all is well.
+<strong>NOTE:</strong> The <code>-m</code> is <em>module</em>, in this case the <code>ping</code> module was used. If no module is specified then arguments are executed as a shell command.
+Instead of <em>all</em> you can use <em>web*</em> wildcard.</p>
+<p>To avoid the scripts getting hung by the SSH warning for adding new hosts keys I uncommented the following in the /etc/ansible/ansible.cfg:</p>
+<p><code>host_key_checking = False</code></p>
+<h3 id="using-ansible" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#using-ansible" title="Permanent link: Using Ansible" data-icon="#">Using Ansible</a></h3>
+<p>An example of an ad-hoc command:</p>
+<pre><code>$ ansible web1 -a "/bin/echo hello"   # no -m means execute arguments in shell
+web1 | CHANGED | rc=0 &gt;&gt;
+hello</code></pre>
+<p>The above command says to execute shell command with argument <code>/bin/echo hello</code> on the <em>web1</em> host.</p>
+<p>In its simplest form, an ad-hoc command looks like this:</p>
+<p><code>ansible &lt;target&gt; -m &lt;module_name&gt; -a &lt;module_arguments&gt;</code></p>
+<p>Ad-hoc commands are for doing things as a one-off, quickly and not intended to be repeated.</p>
+<p>For configuration management, <strong>playbooks</strong> are used.</p>
+<h4 id="ansible-playbooks" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#ansible-playbooks" title="Permanent link: Ansible playbooks" data-icon="#">Ansible playbooks</a></h4>
+<p>Ansible playbooks are config files that describe how servers should be configured, by defining a sequence of tasks to be performed on each of the machines.</p>
+<p>Playbooks are written in the YAML file format. They contain one or more <em>plays</em>.</p>
+<p><strong>an example play:</strong></p>
+<pre><code>---
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure apache is at the latest version
+    apt: name=apache2 state=latest
+  - name: ensure apache is running
+    service: name=apache2 state=started enabled=yes</code></pre>
+<p>In the above play, each task has a name, followed by <strong>module:arguments</strong> pairs.</p>
+<p>Ansible hosts files can contain many groups of servers, and the playbooks can contain many plays for specific servers or groups of servers. In this way you can configure an entire environment with one command.</p>
+<p><strong>idempotency</strong></p>
+<p>The definition of something that is idempotent is that executing it repeatedly has the same effect as executing it once.</p>
+<p>In other words, the idempotency of the Ansible playbook is that you can add things in as needed and rerun it, and it will only apply the new things. Therefore you can use the same playbook over and over.</p>
+<p><strong>handlers and notify</strong></p>
+<p>The <strong>handlers</strong> and <strong>notify</strong> blocks are for executing things conditionally, when something is changed, for example:</p>
+<pre><code>tasks:
+- name: copy configuration
+ copy:
+ src: foo.conf
+ dest: /etc/foo.conf
+ notify:
+ - restart apache
+handlers:
+- name: restart apache
+ service:
+ name: apache2
+ state: restarted</code></pre>
+<p>The above play will copy a config file for apache to the host, and upon the config changing it will restart apache.</p>
+<p>The <strong>notify</strong> block says to notify the <strong>handler</strong> named <em>restart apache</em>, and the restart apache handler specifies that the apache service shold be in state <em>restarted</em>.</p>
+<p>The task can stay in the playbook permanently, and the <strong>copy</strong> module can detect any future changes, and only then will it run the task again, including the notify and handlers.</p>
+<p><strong>variables</strong></p>
+<p>The playbooks (and the inventory file as well) support variables for values, allowing for differences between hosts. This also allows for querying and iteration over hosts. For example:</p>
+<pre><code>---
+- hosts: web1
+  vars:
+    http_port: 8080</code></pre>
+<p>This will set the port for http on host <em>web1</em>. Then you can query it using the <strong>Jinja2</strong> syntax:</p>
+<pre><code>tasks:
+- name: print port number
+  debug:
+    msg: "Port number: {{http_port}}"</code></pre>
+<p>The output:</p>
+<p>$ ansible-playbook playbook.yml</p>
+<pre><code>...
+
+TASK [print port number] **************************************************
+ok: [web1] =&gt; {
+      "msg": "Port number: 8080"
+}</code></pre>
+<p>In addition to user-defined variables there are also predefined automatic variables. For example, the <em>hostvars</em> variable stores a map with info regarding all hosts in the inventory.
+Here is an example using the <strong>Jinja2</strong> syntax to iterate over all hosts to obtain the host IP:</p>
+<pre><code>---
+- hosts: web1
+  tasks:
+  - name: print IP address
+    debug:
+      msg: "{% for host in groups['all'] %} {{
+              hostvars[host]['ansible_host'] }} {% endfor %}"</code></pre>
+<p>The output:</p>
+<p>$ ansible-playbook playbook.yml</p>
+<pre><code>...
+
+TASK [print IP address] **************************************************
+ok: [web1] =&gt; {
+      "msg": " 192.168.0.241  192.168.0.242 "
+}</code></pre>
+<p><strong>NOTE:</strong> Although the above example specifies the <strong>web1</strong> host, the for loop iterates over all hosts in every group, so it does not really matter what the <strong>host</strong> is for this type of task. Also, the <strong>Jinja2</strong> code for the loop does not cohabitate with regular code, so it had to go in a separate playbook.</p>
+<p><strong>roles</strong></p>
+<p>Roles are analagous to Puppet modules from Puppet Forge. They are predefined and well structured yaml files ready to be included in a playbook. They are for things like installing MySQL, with all tasks for installing and configuring as well.</p>
+<p>Ansible Galaxy is a public repository of roles for use. To use a role from there you first download it with:</p>
+<p><code>$ ansible-galaxy install username.role_name</code></p>
+<p>For example to use a MySQL role by a contributor <em>geerlingguy</em> you use:</p>
+<p><code>$ ansible-galaxy install geerlingguy.mysql</code></p>
+<p>Then you use it in a playbook:</p>
+<pre><code>---
+- hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+  - role: geerlingguy.mysql
+    become: yes</code></pre>
+<p>A role always has the following directory structure:</p>
+<pre><code>templates/
+tasks/
+handlers/
+vars/
+defaults/
+meta/</code></pre>
+<p>In each of those directories there is a <code>main.yml</code> file containing parts that can be included in the <code>playbook.yml</code> file. They altogether form a complete install and configure of something.</p>
+<p>Ansible Galaxy is at https://galaxy.ansible.com/</p>
+<p>To install several roles at once, use a <code>requirements.yml</code> file to define them, then install them with <code>ansible-galaxy install -r requirements.yml</code></p>
+<h3 id="deployment-with-ansible" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#deployment-with-ansible" title="Permanent link: Deployment with Ansible" data-icon="#">Deployment with Ansible</a></h3>
+<h4 id="deploy-the-calculator-app-with..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#deploy-the-calculator-app-with..." title="Permanent link: Deploy the calculator app with hazelcast" data-icon="#">Deploy the calculator app with hazelcast</a></h4>
+<p><strong>NOTE:</strong> Working in <code>ansible</code> branch of calculator repo.</p>
+<p>For this example we will deploy the hazelcast app to the <strong>web1</strong> host, and the calculator app to the <strong>web2</strong> host.</p>
+<p><strong>create playbook.yml</strong></p>
+<pre><code>---
+- hosts: web1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Java Runtime Environment is installed
+    apt:
+      name: default-jre
+      state: present
+      update_cache: yes
+  - name: create Hazelcast directory
+    file:
+      path: /var/hazelcast
+      state: directory
+  - name: download Hazelcast
+    get_url:
+      url: https://repo1.maven.org/maven2/com/hazelcast/hazelcast/3.12/hazelcast-3.12.jar
+      dest: /var/hazelcast/hazelcast.jar
+      mode: a+r
+  - name: copy Hazelcast starting script
+    copy:
+      src: hazelcast.sh
+      dest: /var/hazelcast/hazelcast.sh
+      mode: a+x
+  - name: configure Hazelcast as a service
+    file:
+      path: /etc/init.d/hazelcast
+      state: link
+      force: yes
+      src: /var/hazelcast/hazelcast.sh
+  - name: start Hazelcast
+    service:
+      name: hazelcast
+      enabled: yes
+      state: started
+- hosts: web2
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: ensure Java Runtime Environment is installed
+    apt:
+      name: default-jre
+      state: present
+      update_cache: yes
+  - name: create directory for Calculator
+    file:
+      path: /var/calculator
+      state: directory
+  - name: copy Calculator starting script
+    copy:
+      src: calculator.sh
+      dest: /var/calculator/calculator.sh
+      mode: a+x
+  - name: configure Calculator as a service
+    file:
+      path: /etc/init.d/calculator
+      state: link
+      force: yes
+      src: /var/calculator/calculator.sh
+  - name: copy Calculator
+    copy:
+      src: build/libs/calculator-0.0.1-SNAPSHOT.jar
+      dest: /var/calculator/calculator.jar
+      mode: a+x
+    notify:
+    - restart Calculator
+  handlers:
+  - name: restart Calculator
+    service:
+      name: calculator
+      enabled: yes
+      state: restarted</code></pre>
+<p><strong>modify .java file</strong></p>
+<p>The file <code>src/main/java/com/leszko/calculator/CalculatorApplication.java</code> needs to be modified because the address for <strong>hazelcast</strong> is set to the name that resolved in k8s. Changed it to the IP for host <strong>web2</strong>.</p>
+<p><strong>Create calculator.sh file</strong></p>
+<p>A bash script to start the calculator.jar:</p>
+<pre><code>#!/bin/bash
+
+    ### BEGIN INIT INFO
+    # Provides: calculator
+    # Required-Start: $remote_fs $syslog
+    # Required-Stop: $remote_fs $syslog
+    # Default-Start: 2 3 4 5
+    # Default-Stop: 0 1 6
+    # Short-Description: Calculator application
+    ### END INIT INFO
+
+    java -jar /var/calculator/calculator.jar &amp;</code></pre>
+<p><strong>build the app with gradle</strong></p>
+<pre><code>$ ./gradlew build
+$ ansible-playbook playbook.yml</code></pre>
+<p><strong>run the playbook</strong></p>
+<p><code>ansible-playbook playbook.yml</code></p>
+<p>When Ansible is completed, go to the URL for <strong>web2</strong> at:</p>
+<p><code>http://192.168.1.126:8080/sum?a=1&amp;b=2</code>  and the browser returned <strong>3</strong> proving it all works.</p>
+<h3 id="ansible-with-docker-and..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#ansible-with-docker-and..." title="Permanent link: Ansible with Docker and Kubernetes" data-icon="#">Ansible with Docker and Kubernetes</a></h3>
+<p>Ansible is useful in the continuous delivery process because it can manage the infrastructure such as kubernetes clusters, docker hosts, docker registries, and cloud providers, by provisioning, applying update, kernel patches, or any configuration relating to the OS. Additionally, any non-containerized apps running on physical/vm nodes can be managed by ansible.</p>
+<p>The following diagram illustrates how Ansible can manage underlying infrastructure:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./ansible.png" alt="" />.</p>
+<h4 id="provision-a-docker-host-and..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#provision-a-docker-host-and..." title="Permanent link: Provision a docker host and deploy an app" data-icon="#">Provision a docker host and deploy an app</a></h4>
+<p>Ansible has a set of very useful docker modules such as:</p>
+<ul>
+<li>docker_image - build/manage images</li>
+<li>docker_container - run containers</li>
+<li>docker_image_facts - inspect images</li>
+<li>docker_login - login to a docker registry</li>
+<li>docker_network - manage docker networks</li>
+<li>docker_service - manage docker-compose</li>
+</ul>
+<p><strong>install docker and docker python on Debian</strong></p>
+<p>I used a playbook built from a role and the tasks for putting my user <code>ron</code> in the docker group. Also the tasks for installing <strong>python-pip</strong> and <strong>docker-py</strong> (dependencies needed by Ansible):</p>
+<pre><code>- hosts: docker1
+  become: yes
+  become_method: sudo
+  vars:
+    pip_install_packages:
+      - name: docker
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
+  tasks:
+  - name: add user ron to docker group
+    user:
+      name: ron
+      groups: docker
+      append: yes</code></pre>
+<p>Next I used this playbook to run a container with hazelcast:</p>
+<pre><code>- hosts: docker1
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: run Hazelcast container
+    docker_container:
+      name: hazelcast
+      image: hazelcast/hazelcast
+      state: started
+      exposed_ports:
+      - 5701</code></pre>
+<p>All works.</p>
+<h2 id="continuous-delivery-pipeline" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#continuous-delivery-pipeline" title="Permanent link: Continuous Delivery Pipeline" data-icon="#">Continuous Delivery Pipeline</a></h2>
+<p>In this chapter comes the missing parts of the final pipeline:</p>
+<ul>
+<li>environments and infrastructure</li>
+<li>application versioning</li>
+<li>nonfunctional testing</li>
+<li>complete the continuous delivery pipeline</li>
+</ul>
+<h3 id="environments-and-infrastructure" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#environments-and-infrastructure" title="Permanent link: Environments and Infrastructure" data-icon="#">Environments and Infrastructure</a></h3>
+<p>There are 4 common environment types:</p>
+<ul>
+<li>production</li>
+<li>staging</li>
+<li>QA (testing)</li>
+<li>development</li>
+</ul>
+<h4 id="production" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#production" title="Permanent link: Production" data-icon="#">Production</a></h4>
+<p>The most important environment as it is the one used by the end user. It is usually accessed by the endpoint of the load balancer:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./prod.png" alt="" /></p>
+<p>The load balancer will direct the client traffic based on geographic proximity. If the app is running in multiple physical locations, then each location will have a cluster of servers. If using docker and kubernetes, then each location will likely have at least one kubernetes cluster.</p>
+<p>The issues with having multiple geographic locations are not just proximity to users, but also database connectivity and replication among all the database nodes. Docker and kubernetes themselves do not solve these problems. Providing horizontal scaling is not a solution for proximity.</p>
+<h4 id="staging" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#staging" title="Permanent link: Staging" data-icon="#">Staging</a></h4>
+<p>The release candidate is deployed to staging for final testing before going live. Ideally, staging is a mirror of production:</p>
+<p><img src="/knowledge-base/devops/continuous-delivery-docker/./staging.png" alt="" /></p>
+<p>Furthermore, if the app is deployed in multiple locations, then staging should also have multiple locations.</p>
+<p>In the CD process, all automated acceptance tests (functional and non functional) are run against the staging environment. Most functional testing does not require identical production-like infrastructure. For nonfunctional testing, however, it is a must.</p>
+<p>While not uncommon for staging to contain fewer machines than production to save costs, the approach can lead to many production issues. For example, synchronization between servers in production, while no such synch is required in a smaller staging environment. The synch issues are now caught in staging because they just do not exist.</p>
+<h4 id="the-qa-environment" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#the-qa-environment" title="Permanent link: The QA environment" data-icon="#">The QA environment</a></h4>
+<p>In the QA environment, the QA team performs exploratory testing, and, for external apps that depend on the service, integration testing.</p>
+<p>The staging environment does not need to be stable, as it is changed with every commit to the repo. However, the QA instance needs to provide some stability and expose the same API as prod, or at least backward compatible. Further, while staging needs to mirror prod, QA can be different from prod, as its purpose is not to ensure the release candidate works properly.</p>
+<p>QA is deployed via a different pipeline as it has a different life-cycle than prod. For example, the QA team may want to test experimental code that is branched from trunk.</p>
+<h4 id="the-development-environment" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#the-development-environment" title="Permanent link: The development environment" data-icon="#">The development environment</a></h4>
+<p>Development can be provided as a shared server or each developer con have their own dev environment.</p>
+<p>Dev always contains the latest version of the code. Is is used to enable integration between developers, and can be treated the same as QA, but is used by developers as opposed to QA.</p>
+<h4 id="environments-in-continuous..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#environments-in-continuous..." title="Permanent link: Environments in continuous delivery" data-icon="#">Environments in continuous delivery</a></h4>
+<p>For purposes of CD, staging is indispensable. In rare cases where performance is not important, acceptance could be performed on a local docker dev host, but this is an exception, and there is always a risk of production issues related to environment.</p>
+<p>The other environments such as dev and QA are not usually important with respect to CD. If it is desired to deploy to QA or dev with every commit, a separate pipeline can be created. Usually in that scenario, deployment to QA is triggered manually since it has different life-cycle than prod.</p>
+<h4 id="securing-environments" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#securing-environments" title="Permanent link: Securing environments" data-icon="#">Securing environments</a></h4>
+<p>These environments need to be well secured. In the CD process, the Jenkins agent must have access to servers to deploy the app. There are different approaches to providing agents with server credentials:</p>
+<ul>
+<li>ssh key into the agent - this can be done if not using dynamic docker slaves.</li>
+<li>ssh key into the agent image - if using dynamic agents, the key can be imbedded into the image. this does however create a possible security hole. anyone with access to the image has the keys</li>
+<li>jenkins credentials - store the credentials on jenkins and use them in the pipeline</li>
+<li>copy the keys dynamically into the slave when starting the build.</li>
+</ul>
+<p>The most risky of these is placing the keys in the agent image. This exposes the keys to the docker registry and the docker host. This requires all hosts to be well secured.</p>
+<h3 id="nonfunctional-testing" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#nonfunctional-testing" title="Permanent link: Nonfunctional testing" data-icon="#">Nonfunctional testing</a></h3>
+<p>Nonfunctional testing deals with system load and other variables not associated with the code itself.</p>
+<p>Many apps fail because they are not able to deal with a sudden spike in the number of users. Further, some users may stop using the service entirely because of delays in response. Taking this into account, nonfunctional testing is just as important as functional testing.</p>
+<p>Always take the following steps for nonfunctional testing:</p>
+<ul>
+<li>decide which nonfunctional aspects are crucial to the business</li>
+<li>for each of those aspects:
+<ul>
+<li>specify the tests the same as for acceptance testing</li>
+<li>add a stage to the CD pipeline after acceptance testing, while the app is still deployed on staging</li>
+</ul></li>
+<li>agree that the app comes to release stage only after passing all nonfunctional testing</li>
+</ul>
+<h4 id="types-of-nonfunctional-tests" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#types-of-nonfunctional-tests" title="Permanent link: Types of nonfunctional tests" data-icon="#">Types of nonfunctional tests</a></h4>
+<p><strong>performance testing</strong>
+These are the most widely used. They measure responsiveness and stability of the system. The simplest test is to send a request to the web service and measure <strong>RTT</strong> (round trip time).</p>
+<p>There are different definitions of performance testing, such as load, stress, and scalability. They are sometimes referred to as <em>white-box</em> tests.</p>
+<p>For performance testing, we can use a dedicated framework such as <strong>JMeter</strong> for Java, or just use the same tool as for acceptance tests.</p>
+<p>A simple performance test is usually added as a pipeline stage, right after acceptance tests. The test should fail if the <strong>RTT</strong> exceeds the specified limit and bugs are detected that definitely slow down the service.</p>
+<p><strong>load testing</strong></p>
+<p>As expected, load testing is used to measure the performance of the system under load with lots of concurrent requests. During load testing we measure the average request-response time of many concurrent calls, usually from many machines.</p>
+<p>Load testing is a common QA phase in the release cycle. For automation, the same tools as the simple performance test can be used. For larger systems, however, we may need a separate client environment to perform a larger number of concurrent requests.</p>
+<p><strong>stress testing</strong></p>
+<p>Also known as <em>capacity testing</em> or <em>throughput testing</em>, stress testing determines how many concurrent users can access the service.</p>
+<p>Stress testing differs from load testing in this way:</p>
+<ul>
+<li>load testing sets a constant concurrency of users and monitors latency.</li>
+<li>stress testing sets a desired latency and monitors for that latency as concurrent users is increased.</li>
+</ul>
+<p>The end result of stress testing is a maximum number of concurrent users, measured towards the expected peak usage time.</p>
+<p>Stress testing is not well suited for CD because it requires long tests with an increasing number of concurrent requests. Therefore, it should be implemented as a separate script in a separate pipeline and triggered on demand when code change is expected to affect performance.</p>
+<p><strong>scalability testing</strong></p>
+<p>Scalability testing shows how latency and throughput change when servers or services are scaled up. While difficult to achieve, the perfect trend would be linear; for example if, with one server, response time is 500ms with 100 concurrent users, then adding another server would mean the same response time with double (200) the user load.</p>
+<p>This is hard to achieve because of the need for data consistency (thus synchronization), between servers.</p>
+<p>Scalability tests should be automated and provide a graph showing the relationship between the number of servers and the number of concurrent users. These results determine at what point adding more servers does <strong>not</strong> help.</p>
+<p>As with stress testing, scalability tests should be separate from the CD pipeline.</p>
+<p><strong>endurance testing</strong></p>
+<p>Also known as <em>longevity</em> tests, endurance tests run the system for a long time to see if performance degrades after a certain period of time. They detect memory leaks and stability issues. Again, they require long testing times, and are not ideal in the CD pipeline.</p>
+<p><strong>security testing</strong></p>
+<p>Functional aspects of security such as authentication, authorization or role assignment should be checked the same way as other functional requirements, during the acceptance test phase. The same applies for nonfunctional aspects such as protection against SQL injection.</p>
+<p>Security tests should be included in the CD pipeline as a pipeline stage. They can be written using the same frameworks as with acceptance tests or with dedicated security testing frameworks such as <em>behavior-driven development</em> (<strong>BDD</strong>).
+<strong>NOTE</strong>: Security should always be part of the <em>explanatory testing process</em> where testers and security experts detect security holes and add new testing scenarios.</p>
+<p><strong>maintainability testing</strong></p>
+<p>These tests explain how easy it is to maintain a given system. Essentially they judge code quality. These include the test coverage and static code analysis steps already used in our pipeline. The <strong>Sonar</strong> tool can also give overview of code quality and <em>technical debt</em>.</p>
+<p><strong>recovery testing</strong></p>
+<p>This testing determines how quickly the system can recover after crashing due to a software or hardware failure. Obviously the best scanario here would be the system doesnt fail at all, even if part of its services are down.</p>
+<p>As an example, some companies such as <strong>Netflix</strong> use their own tool <em>Chaos Monkey</em> to purposely cause production failures by randomly terminating production instances. This technique forces engineers to write more resilient code.</p>
+<p>Recovery testing is clearly not part of the CD process, but instead is a periodic event to check overall health.</p>
+<h4 id="challenges-of-nonfunctional..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#challenges-of-nonfunctional..." title="Permanent link: Challenges of nonfunctional testing" data-icon="#">Challenges of nonfunctional testing</a></h4>
+<p>These tests pose new challenges on the development and delivery of software such as:</p>
+<ul>
+<li>long test runs - tests take a long time and may need a special execution environment.</li>
+<li>incremental nature - it is difficult to set the proper limits for failure (unless a well defined SLA exists). In most cases the app will probably incrementally approach the set limit, although no one code change will cause failure.</li>
+<li>vague requirements - users do not usually provide much input for nonfunctional requirements, other than maybe some guilelines for acceptable latency or the number of users.</li>
+<li>multiplicity - there are many different nonfunctional tests and choosing will mean compromise.</li>
+</ul>
+<p>The best approach to nonfunctional testing is:</p>
+<ul>
+<li>make a list of all nonfunctional test types</li>
+<li>eliminate those not needed for your sysem, for reasons including:
+<ul>
+<li>service is small and a simple performance test is enough</li>
+<li>system is internal only and is read-only, not requiring security checks</li>
+<li>system is designed for one machine and needs no scaling</li>
+<li>cost of creating certain tests is too high</li>
+</ul></li>
+<li>split tests into two groups:
+<ul>
+<li>continuous delivery - can be added to pipeline</li>
+<li>analysis - not possible in pipeline due to execution time, nature or cost</li>
+</ul></li>
+<li>for those added to pipeline, implement the stages in the pipeline</li>
+<li>for those not added (analysis):
+<ul>
+<li>create automated tests</li>
+<li>schedule then they are run</li>
+<li>schedule meetings to discuss results and take action.</li>
+</ul></li>
+</ul>
+<p>A very good approach is having nightly builds to execute the long running tests that do not fit in the pipeline. Then have weekly meetings to monitor and analyze trends of performance.</p>
+<p><strong>summary</strong></p>
+<p>There are many types of nonfunctional tests that pose challenges. For the sake of stability they should not be blindly skipped.</p>
+<p>The implementation differs between then, but in most cases they can be implemented similar to functional acceptance tests and should be run against the staging environment.</p>
+<h3 id="application-versioning" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#application-versioning" title="Permanent link: Application versioning" data-icon="#">Application versioning</a></h3>
+<p>Up to now, for every jenkins build, we have created a new docker image, pushed it to the registry, and used the <strong>latest</strong> tag throughout the process. There are at least 3 disadvantages with this method:</p>
+<ul>
+<li>if, during the build and after the acceptance tests, someone pushes a new image version, we can end up releasing that untested version</li>
+<li>we always push an image with the same naming convention, therefore the image is effectively overwritten in the docker registry</li>
+<li>it is very hard to manage images without versions just by their hash IDs</li>
+</ul>
+<p>There are different ways of managing docker image versions within the CD process.</p>
+<h4 id="versioning-strategies" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#versioning-strategies" title="Permanent link: Versioning strategies" data-icon="#">Versioning strategies</a></h4>
+<p>Here are the most popular solutions applied in the CD process when each commit creates a new version:</p>
+<ul>
+<li>semantic versioning - the most popular solution. it uses sequence based identifiers usually in the form <strong>x.y.z</strong>. this requires a commit to the repo by jenkins in order to increase the current version number, which is usually stored in the build file. It is well supported by maven, gradle, and other build tools. The identifier usually consists of 3 numbers:
+<ul>
+<li><strong>x</strong> - the major version. does not require backward compatibility when this version increases</li>
+<li><strong>y</strong> - the minor version. the software does need to be backward compatible when this is increased</li>
+<li><strong>z</strong> - the build number (patch version); sometimes also considered as a backward and forward compatible change.</li>
+</ul></li>
+<li>timestamp - using the date and time of the build for the app. less verbose than sequential numbers, but very convenient in the CD process it does not require jenkins to commit back to the repo</li>
+<li>hash - a randomly generated hash version that shares the same benefit of the timestamp, and probably the simplest solution possible. drawback; not possible to look at two versions and deduce which is latest</li>
+<li>mixed - there are many variations of the solutions above; such as major and minor versions with timestamp</li>
+</ul>
+<p>The above solutions are all fine for the CD process. Semantic versioning, however, does require a commit to the repo from the build execution, so that the version is increased in the source repo.</p>
+<h4 id="versioning-in-the-pipeline" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#versioning-in-the-pipeline" title="Permanent link: Versioning in the pipeline" data-icon="#">Versioning in the pipeline</a></h4>
+<p>Implement the <strong>date-time</strong> stamp solution in the pipeline:</p>
+<p><strong>install plugin Build Timestamp</strong></p>
+<p>Install the plugin in jenkins and use format <em>yyyyMMdd-HHmm</em>.
+Modify all stages involving docker images (in legacy branch for now) like so:</p>
+<p>sh "docker build -t localhost:5000/calculator<strong>:${BUILD_TIMESTAMP}</strong> ."</p>
+<p>The <strong>docker build</strong>, <strong>docker push</strong> and <strong>deploy to staging</strong> stages required this change.</p>
+<p><strong>NOTE</strong>: Ran the legacy pipeline and it passed after adding timestamps. Verified on docker host the correctly tagged images are in the registry.</p>
+<h3 id="complete-the-cd-pipeline" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#complete-the-cd-pipeline" title="Permanent link: Complete the CD pipeline" data-icon="#">Complete the CD pipeline</a></h3>
+<p>Complete the pipeline with the following steps:</p>
+<ul>
+<li>create the Ansible inventory of staging and production environments</li>
+<li>use version in the k8s deployment</li>
+<li>use remote k8s cluster for staging environment</li>
+<li>update acceptance tests to use the k8s staging cluster</li>
+<li>release the app to the prod environment</li>
+<li>add a smoke test to ensure app was successfully released</li>
+</ul>
+<p><strong>NOTE</strong> I will be doing all this in the <em>feature</em> branch until it all works, then will merge into master.</p>
+<h4 id="inventory" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#inventory" title="Permanent link: Inventory" data-icon="#">Inventory</a></h4>
+<p>As we already have two working k8s clusters, we can use the kube config files as the inventory.</p>
+<h4 id="versioning" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#versioning" title="Permanent link: Versioning" data-icon="#">Versioning</a></h4>
+<p>Need to add the <strong>{{VERSION}}</strong> variable in the calculator.yaml file. (moving calculator.yaml into the pipeline root now):</p>
+<p><code>image: docker:5000/calculator:{{VERSION}}</code></p>
+<p>Next, add the "Update version" stage to the Jenkinsfile:</p>
+<pre><code>stage("Update version") {
+    steps {
+        sh "sed -i 's/{{VERSION}}/${BUILD_TIMESTAMP}/g' calculator.yaml"
+    }
+}</code></pre>
+<h4 id="remote-staging-environment" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#remote-staging-environment" title="Permanent link: Remote staging environment" data-icon="#">Remote staging environment</a></h4>
+<p>Rather than testing the app on the local docker host, it is closer to production to use a remote k8s cluster for staging.</p>
+<p><strong>NOTE:</strong> In preparation for this and to more closely match the project, i renamed the contexts for the 2 clusters to <em>staging</em> and <em>production</em>. Staging lives on server1 and production lives on server2.</p>
+<p>Staging will move from docker to k8s. This requires the following change in the Jenkinsfile:</p>
+<pre><code>stage("Deploy to staging") {
+    steps {
+        sh "kubectl config use-context staging"
+        sh "kubectl apply -f hazelcast.yaml"
+        sh "kubectl apply -f calculator.yaml"
+    }
+}</code></pre>
+<p>This completes the staging environment.</p>
+<h4 id="acceptance-testing-environment" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#acceptance-testing-environment" title="Permanent link: Acceptance testing environment" data-icon="#">Acceptance testing environment</a></h4>
+<p>This requires modifying the <strong>acceptance-test.sh</strong> bash script to use k8s:</p>
+<pre><code>#!/bin/bash
+set -x
+
+NODE_IP=$(kubectl get nodes -o jsonpath='{ $.items[0].status.addresses[?
+        (@.type=="ExternalIP")].address }')
+NODE_PORT=$(kubectl get svc calculator-service -o=jsonpath='{.spec.ports[0].nodePort}')
+./gradlew acceptanceTest -Dcalculator.url=http://${NODE_IP}:${NODE_PORT}</code></pre>
+<p>The script above uses <em>kubectl</em> to get the NODEPORT then runs the acceptance test against the pod.</p>
+<h4 id="release-app-to-production..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#release-app-to-production..." title="Permanent link: Release app to production environment" data-icon="#">Release app to production environment</a></h4>
+<p>Just as the prod environment should closely resemble the staging environment, the jenkins stage should also. The only change needed here is the k8s context set to production:</p>
+<pre><code>stage("Release") {
+    steps {
+        sh "kubectl config use-context production"
+        sh "kubectl apply -f hazelcast.yaml"
+        sh "kubectl apply -f calculator.yaml"
+    }
+}</code></pre>
+<h4 id="smoke-testing" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#smoke-testing" title="Permanent link: Smoke testing" data-icon="#">Smoke testing</a></h4>
+<p>A smoke test is a small subset of the acceptance tests whose only purpose is to verify the release process was completed successfully. Not that the code itself is right, but the release of that code to production was without flaw. If the release process is not viable, a perfectly good app might have issues in production.</p>
+<p>The smoke test is defined in the same way as the acceptance test:</p>
+<pre><code>stage("Smoke test") {
+    steps {
+        sleep 60
+        sh "chmod +x smoke-test.sh &amp;&amp; ./smoke-test.sh"
+    }
+}</code></pre>
+<p>The pipeline is complete. Here is the final Jenkinsfile:</p>
+<pre><code>pipeline {
+    agent any
+     triggers {
+     pollSCM('H/5 * * * *')
+}
+     stages {
+          stage("Compile") {
+               steps {
+                    sh "./gradlew compileJava"
+               }
+          }
+          stage("Unit test") {
+               steps {
+                    sh "./gradlew test"
+               }
+          }
+          stage("Code coverage") {
+               steps {
+                    sh "./gradlew jacocoTestReport"
+                    publishHTML (target: [
+                    reportDir: 'build/reports/jacoco/test/html',
+                    reportFiles: 'index.html',
+                    reportName: "JaCoCo Report"
+          ])
+          sh "./gradlew jacocoTestCoverageVerification"
+                }
+          }
+          stage("Static code analysis") {
+               steps {
+                    sh "./gradlew checkstyleMain"
+                    publishHTML (target: [
+                    reportDir: 'build/reports/checkstyle/',
+                    reportFiles: 'main.html',
+                    reportName: "Checkstyle Report"
+          ])
+                }
+          }
+          stage("Package") {
+               steps {
+                    sh "./gradlew build"
+               }
+          }
+          stage("Docker build") {
+               steps {
+                    sh "docker build -t localhost:5000/calculator ."
+               }
+          }
+          stage("Docker push") {
+               steps {
+                    sh "docker push localhost:5000/calculator"
+               }
+          }
+          stage("Update version") {
+               steps {
+                    sh "sed  -i 's/{{VERSION}}/${BUILD_TIMESTAMP}/g' calculator.yaml"
+               }
+          }
+          stage("Deploy to staging") {
+               steps {
+                    sh "kubectl config use-context staging"
+                    sh "kubectl apply -f hazelcast.yaml"
+                    sh "kubectl apply -f calculator.yaml"
+               }
+          }
+          stage("Acceptance test") {
+               steps {
+                    sleep 60
+                    sh "chmod +x acceptance-test.sh &amp;&amp; ./acceptance-test.sh"
+               }
+          }
+          stage("Release") {
+               steps {
+                    sh "kubectl config use-context production"
+                    sh "kubectl apply -f hazelcast.yaml"
+                    sh "kubectl apply -f calculator.yaml"
+                }
+            }
+          stage("Smoke test") {
+               steps {
+                    sleep 60
+                    sh "chmod +x smoke-test.sh &amp;&amp; ./smoke-test.sh"
+                }
+            }
+       }
+          post {
+       always {
+            sh "docker stop calculator"
+       }
+  }
+
+}</code></pre>
+<div class="notices red">
+<p>The jenkins docker agent has to have kubectl and access to the cluster config file. Need to have the config file pushed in at build time via the pipeline.</p>
+</div>";s:12:"content_meta";N;}

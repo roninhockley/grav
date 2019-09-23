@@ -1,0 +1,11 @@
+state: enabled
+email: roninhockley@gmail.com
+fullname: 'admin dude'
+title: administrator
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$.KqOJX06wigLiv8TfejdFO36VuiKzOA.Hee299VWP4EyweIoDUmf.

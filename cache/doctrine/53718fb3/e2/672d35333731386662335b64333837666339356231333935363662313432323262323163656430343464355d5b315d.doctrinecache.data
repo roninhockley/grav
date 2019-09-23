@@ -1,0 +1,24 @@
+1569869313
+a:2:{s:7:"content";s:1271:"<p>To post to this knowledge use the workflow defined below:</p>
+<ul>
+<li>open template in Atom with 'ctrl-alt-n'</li>
+<li>set visible to <code>true</code> in the yaml frontmatter block</li>
+<li>set the title to whatever you want to appear in the menu nav</li>
+<li>set the category to <code>KB</code></li>
+<li>use a relevant tag such as those below or add a new one:
+<ul>
+<li>linux</li>
+<li>bash</li>
+<li>kvm</li>
+<li>aws</li>
+<li>docker</li>
+</ul></li>
+<li>start writing and when done save to a new folder under the knowledge-base folder with naming convention in lowercase and separated by dashes (example: linux-admin)</li>
+<li>name the file <code>default.md</code></li>
+</ul>
+<p>To clarify, all posts in this knowledge base are files in their own folder. The folder is created first then the file is always named <code>default.md</code></p>
+<p>The file hierarchy looks like below. This article is highlighted by the cursor:</p>
+<p><img alt="" src="/user/pages/knowledge-base/pic1.png" /></p>
+<p>And right below the filename is the image above, they are placed in the same folder and linked to in markdown with just the filename as the link, like below:</p>
+<p><code>![](pic.png)</code></p>
+<p>GitHub token:    <code>f15824f2ad260582a3ee80c954c78b38770320b4</code></p>";s:12:"content_meta";N;}

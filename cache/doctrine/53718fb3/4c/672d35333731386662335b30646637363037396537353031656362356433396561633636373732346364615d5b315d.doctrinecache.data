@@ -1,0 +1,521 @@
+1569867621
+a:2:{s:7:"content";s:33908:"<nav class="table-of-contents toc" role="navigation">
+                <span class="toctitle">Table of contents:</span>
+      
+                                                                                                                                                                                                    
+  <ul>
+      
+        
+        
+              <li><a href="#ssh-connections" class="toclink" title="SSH Connections">SSH Connections</a></li>
+      
+        
+        
+              <li><a href="#inventory" class="toclink" title="Inventory">Inventory</a></li>
+      
+        
+        
+              <li><a href="#playbooks" class="toclink" title="Playbooks">Playbooks</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#order-of-operations" class="toclink" title="Order of Operations">Order of Operations</a></li>
+      
+        
+        
+              <li><a href="#playbook-directives" class="toclink" title="Playbook directives">Playbook directives</a></li>
+      
+        
+        
+              <li><a href="#playbook-execution-strategy" class="toclink" title="Playbook execution strategy">Playbook execution strategy</a></li>
+      
+        
+        
+              <li><a href="#host-selection-patterns" class="toclink" title="Host selection patterns">Host selection patterns</a></li>
+      
+        
+        
+              <li><a href="#play-and-task-names" class="toclink" title="Play and task names">Play and task names</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#module-reference" class="toclink" title="Module reference">Module reference</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#how-modules-are-executed" class="toclink" title="How modules are executed">How modules are executed</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#variables" class="toclink" title="Variables">Variables</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#variable-types" class="toclink" title="variable types">variable types</a></li>
+      
+        
+        
+              <li><a href="#magic-variables" class="toclink" title="Magic variables">Magic variables</a></li>
+      
+        
+        
+              <li><a href="#external-data" class="toclink" title="External data">External data</a></li>
+      
+        
+        
+              <li><a href="#variable-precedence" class="toclink" title="Variable precedence">Variable precedence</a></li>
+      
+        
+        
+              <li><a href="#variable-group-priority" class="toclink" title="Variable group priority">Variable group priority</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#summary" class="toclink" title="Summary">Summary</a></li>
+      
+                      </ul></li>
+              </ul></li>
+          
+        
+              <li><a href="#protecting-secrets-with-ansible" class="toclink" title="Protecting Secrets with Ansible">Protecting Secrets with Ansible</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#create-a-new-encrypted-file" class="toclink" title="Create a new encrypted file">Create a new encrypted file</a></li>
+      
+        
+        
+              <li><a href="#encrypt-an-existing-file" class="toclink" title="Encrypt an existing file">Encrypt an existing file</a></li>
+      
+        
+        
+              <li><a href="#editing-encrypted-files" class="toclink" title="Editing encrypted files">Editing encrypted files</a></li>
+      
+        
+        
+              <li><a href="#decrypting-files" class="toclink" title="Decrypting files">Decrypting files</a></li>
+      
+        
+        
+              <li><a href="#executing-playbooks-with..." class="toclink" title="Executing playbooks with encrypted files">Executing playbooks with encrypted files</a></li>
+      
+        
+        
+              <li><a href="#encrypting-a-string" class="toclink" title="Encrypting a string">Encrypting a string</a></li>
+      
+        
+        
+              <li><a href="#protecting-secrets-on-remote..." class="toclink" title="Protecting secrets on remote hosts">Protecting secrets on remote hosts</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#ansible-awx" class="toclink" title="Ansible AWX">Ansible AWX</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#setup-awx" class="toclink" title="Setup AWX">Setup AWX</a></li>
+      
+                      </ul></li>
+          
+        
+              <li><a href="#jinja2-templates" class="toclink" title="Jinja2 Templates">Jinja2 Templates</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#control-structures" class="toclink" title="Control Structures">Control Structures</a></li>
+      
+                      <li><ul>
+          
+        
+              <li><a href="#conditionals" class="toclink" title="Conditionals">Conditionals</a></li>
+      
+              </ul></li>
+          </ul></li>
+      
+  </ul>
+</nav>
+
+
+<h2 id="ssh-connections" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#ssh-connections" title="Permanent link: SSH Connections" data-icon="#">SSH Connections</a></h2>
+<p>Connections involve 2 factors:</p>
+<ul>
+<li>initial connection over SSH to the host
+<ul>
+<li>By default, ansible connects with the user running the ansible command, using a key.
+Without a key on the target, you must use <code>--ask-pass</code> to get connected.</li>
+</ul></li>
+<li>escalated user to perform ansible tasks
+<ul>
+<li>the <em>ansible_user</em> is an existing user on the target machine with privileges to perform the changes to the host, via a <em>become</em> method of either <code>sudo</code> (the default)  or <code>su</code>. This is configured either in the inventory variables, on the command line, or in the playbook itself.</li>
+</ul></li>
+</ul>
+<h2 id="inventory" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#inventory" title="Permanent link: Inventory" data-icon="#">Inventory</a></h2>
+<p>Here is a sample inventory file that demonstrates both how the INI file is structured and the use of host variables:</p>
+<pre><code>[web]
+mastery.example.name ansible_host=192.168.10.25
+
+[dns]
+backend.example.name
+
+[database]
+backend.example.name
+
+[frontend:children]
+web
+
+[backend:children]
+dns
+database
+
+[web:vars]
+http_port=88
+proxy_timeout=5
+
+[backend:vars]
+ansible_port=314
+
+[all:vars]
+ansible_ssh_user=ron</code></pre>
+<p><a href="https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters"><strong>The full list of available inventory variables:</strong></a></p>
+<h2 id="playbooks" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#playbooks" title="Permanent link: Playbooks" data-icon="#">Playbooks</a></h2>
+<h3 id="order-of-operations" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#order-of-operations" title="Permanent link: Order of Operations" data-icon="#">Order of Operations</a></h3>
+<p>For the most part, items in a playbook are executed in the order they are listed in the playbook itself.</p>
+<p>Within a play, the order of operations is as follows:</p>
+<ul>
+<li>variable loading</li>
+<li>fact gathering</li>
+<li>pre_tasks execution</li>
+<li>handlers notified from pre_task execution</li>
+<li>roles execution</li>
+<li>tasks execution</li>
+<li>handlers notified from roles and tasks</li>
+<li>post_tasks execution</li>
+<li>handlers notified from post_tasks</li>
+</ul>
+<p>The paths for variable files, included task files, included playbook files, files to copy, templates, and scripts are all relative to the directory of the file calling them.</p>
+<h3 id="playbook-directives" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#playbook-directives" title="Permanent link: Playbook directives" data-icon="#">Playbook directives</a></h3>
+<p>Keywords such as <strong>become</strong>, <strong>gather_facts</strong>, or <strong>connection</strong> are examples of keywords which control the behavior of ansible when executing a playbook.</p>
+<p>For the full list of playbook keywords go <a href="https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#play">here</a>.</p>
+<h3 id="playbook-execution-strategy" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#playbook-execution-strategy" title="Permanent link: Playbook execution strategy" data-icon="#">Playbook execution strategy</a></h3>
+<p>There are two options for how the hosts execute each task:  <em>linear</em> and <em>free</em>.</p>
+<ul>
+<li>linear - every host must complete each task before the next task is initiated. this is the default.</li>
+<li>free - each host will move on to the next task as soon as it finishes.</li>
+</ul>
+<h3 id="host-selection-patterns" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#host-selection-patterns" title="Permanent link: Host selection patterns" data-icon="#">Host selection patterns</a></h3>
+<p>To define the hosts that the play will run against, a host pattern can contain one of more blocks with a host, group, wildcard or regex. Blocks are separated by a colon, wildcards are just an asterisk, and regex patterns start with a tilde:</p>
+<p><code>hostname:groupname:*.example:~(web|db)\.example\.com</code></p>
+<p>Advanced usage can include group index selection or even ranges within a group:</p>
+<p><code>webservers[0]:webservers[2:4]</code>.</p>
+<h3 id="play-and-task-names" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#play-and-task-names" title="Permanent link: Play and task names" data-icon="#">Play and task names</a></h3>
+<p>They are not strictly, but they will show up in logs and on command line output, so are good practice.</p>
+<ul>
+<li>names of plays and tasks should be unique</li>
+<li>variables can be used to name tasks and plays, but they must be defined statically because the variables are expanded at playbook <strong>parse</strong> time.</li>
+</ul>
+<h2 id="module-reference" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#module-reference" title="Permanent link: Module reference" data-icon="#">Module reference</a></h2>
+<p>Every task is made up of a <em>name</em> (optional), <em>module reference</em>, <em>module arguments</em>, and <em>task control directives</em>.</p>
+<p><strong>example</strong></p>
+<pre><code>tasks:
+  - name: update repo for debian
+    apt:
+      update_cache: yes
+    when: ansible_facts['os_family'] == "Debian"</code></pre>
+<h3 id="how-modules-are-executed" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#how-modules-are-executed" title="Permanent link: How modules are executed" data-icon="#">How modules are executed</a></h3>
+<p>When a playbook is run, the following actions are taken by ansible to execute it on the remote host:</p>
+<ul>
+<li>ansible locates the module file in <code>/usr/lib/python2.7/dist-packages/ansible/modules</code></li>
+<li>the module file is read into memory, and the arguments are added in. this creates a file object in memory</li>
+<li>the core ansible code for executing modules is added to this file object</li>
+<li>the collection is compressed, Base64 encoded, and wrapped into a script.</li>
+<li>ansible connects to the remote host, by default over SSH, and creates a temp directory.</li>
+<li>ansible connects again over SSH, uncompresses the base64 script, and writes it into a file in the temp directory</li>
+<li>ansible connects again, executes the script from the temp directory on the remote host, then deletes the temp directory containing it.</li>
+</ul>
+<p>Since there are 3 SSH connections occuring for every task, on a larger environment this becomes time consuming.</p>
+<p>To mitigate this there are 2 solutions:</p>
+<ul>
+<li><strong>ControlPersist</strong> - an SSH feature to create a persistent socket to avoid 3 separate handshakes. This is used if the system running ansible supports it.</li>
+<li><strong>pipelining</strong> - rather than using 3 connections, ansible will open an SSH connection on the remote host, and pipe in the module code and script for execution. This uses one connection, not 3.</li>
+</ul>
+<p>Ansible forks off a separate connnect process for a number of hosts, governed by the config <code>forks=</code>. This controls how many hosts ansible will execute tasks on at one time in parallel. The default is 5 forks.</p>
+<h2 id="variables" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#variables" title="Permanent link: Variables" data-icon="#">Variables</a></h2>
+<h3 id="variable-types" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#variable-types" title="Permanent link: variable types" data-icon="#">variable types</a></h3>
+<ul>
+<li>
+<p><strong>inventory variables</strong> - pertain to inventory. <em>host_vars</em> for individual hosts, or <em>group_vars</em> for groups of hosts. They are supplied by <em>inventory files</em>, a <em>dynamic inventory plugin</em>, or from <em>host_vars/<host></em> or <em>group_vars/<group></em> directories.</p>
+<ul>
+<li>whether they come from <em>host_vars/<host></em> or <em>group_vars/<group></em>, they are assigned to a host's <code>hostvars</code>, and they are accessible from playbooks and template files.</li>
+<li>These variables define behavior when dealing with certain hosts, or maybe site-specific pertaining to certain app environments running on particular hosts.</li>
+</ul>
+</li>
+<li>
+<p><strong>role variables</strong> - variables specific to a role, and used by role tasks.</p>
+<ul>
+<li><strong>NOTE</strong> Once a role is added to a playbook, its variables are global in scope and available throughout the rest of the playbook including to other roles. In simple playbooks, roles are run one at a time. But in complex playbooks, care must be taken to avoid collisions like a variable being set by multiple roles.</li>
+</ul>
+</li>
+<li>
+<p><strong>play variables</strong> - variables defined within a play, either by the <strong>vars:</strong> key or sourced from external files via the <strong>vars_files:</strong> key.</p>
+<ul>
+<li>play variables can also be user supplied by using <strong>vars_prompt</strong>.</li>
+<li>these variables are scoped to the play and any tasks within the play.</li>
+</ul>
+</li>
+<li>
+<p><strong>task variables</strong> - these are from data discovered while executing tasks or from fact gathering. They are host specific and are added to the <strong>hostvars</strong>.</p>
+<ul>
+<li>They are discovered via <strong>gather_facts</strong>, <strong>fact modules</strong> (modules that return data rather than alter state), from task return data via the <strong>register</strong> key, or defined directly in a task by using <strong>set_fact</strong> or <strong>add_host</strong> modules.</li>
+<li>
+<p>this data can also be obtained from the user by using the <strong>prompt</strong> argument to the <strong>pause</strong> module:</p>
+<ul>
+<li>name: get the operators name
+pause:
+prompt: "Please enter your name"
+register: opname</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>extra variables - supplied on the command line when executing <strong>ansible-playbook</strong> by using the <strong>--extra-vars</strong> option:
+<pre><code>--extra-vars "foo=bar owner=fred"
+--extra-vars '{"services":["nova-api","nova-conductor"]}'
+--extra-vars @/path/to/data.yaml</code></pre>
+<h3 id="magic-variables" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#magic-variables" title="Permanent link: Magic variables" data-icon="#">Magic variables</a></h3></li>
+</ul>
+<p>These are reserved variables which are always set at playbook execution. They provide information such as the current hostname which a task is being appied to, or what groups that host is in.</p>
+<p>A full list of magic variables is <a href="https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html">here</a>.</p>
+<h3 id="external-data" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#external-data" title="Permanent link: External data" data-icon="#">External data</a></h3>
+<p>Data for role variables, play variables, and task variables can also come from external sources. Ansible provides a mechanism to access and evaluate data from the control machine (the machine running <code>ansible-playbook</code>). The mechanism is called a <strong>lookup plugin</strong>, and a number of them come with Ansible.</p>
+<p>These plugins can be used to look up or access data by reading files, generate and locally store passwords on the Ansible host for later reuse, evaluate environment variables, pipe data in from executables, access data in the Redis or etcd systems, render data from template files, query dnstxt records, and more. The syntax is as follows:</p>
+<p><code>lookup('&lt;plugin_name&gt;', 'plugin_argument')</code></p>
+<p><strong>example for adding a public key on a remote host</strong></p>
+<pre><code>- name: Set authorized key for user ron
+  authorized_key:
+    user: ron
+    state: present
+    key: "{{ lookup('file', '/home/ron/.ssh/id_rsa.pub') }}"</code></pre>
+<h3 id="variable-precedence" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#variable-precedence" title="Permanent link: Variable precedence" data-icon="#">Variable precedence</a></h3>
+<p>In a situation where the same variable name may be used, ansible has an order for loading variable data to decide which variable definition will win:</p>
+<p><strong>in descending order of precedence</strong></p>
+<ol>
+<li><strong>extra vars</strong> from command line (always win)</li>
+<li>include parameters</li>
+<li>role and include role parameters</li>
+<li><strong>set_facts</strong>, and those created with <strong>register</strong></li>
+<li><strong>include_vars</strong></li>
+<li>task <strong>vars</strong></li>
+<li>block <strong>vars</strong> for tasks within a block</li>
+<li>role <strong>vars</strong>  (defined in <strong>main.yml</strong> in the <em>vars</em> subdirectory of the role).</li>
+<li>play <strong>vars_files</strong></li>
+<li>play <strong>vars_prompt</strong></li>
+<li>play <strong>vars</strong></li>
+<li>Host facts (and also cached <strong>set_facts</strong>)</li>
+<li><strong>host_vars</strong> from playbook</li>
+<li><strong>host_vars</strong> from inventory</li>
+<li>inventory file or script defined <em>host</em> <strong>vars</strong></li>
+<li><strong>group_vars</strong> playbook</li>
+<li><strong>group_vars</strong> inventory</li>
+<li><strong>group_vars/all</strong> playbook</li>
+<li><strong>group_vars/all</strong> inventory</li>
+<li>inventory file or script defined <em>group</em> <strong>vars</strong></li>
+<li>role defaults</li>
+<li>command line values such as <strong>-u REMOTE_USER</strong></li>
+</ol>
+<h3 id="variable-group-priority" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#variable-group-priority" title="Permanent link: Variable group priority" data-icon="#">Variable group priority</a></h3>
+<p>In the following example, the <strong>host1.example.com</strong> server is effectively in multiple groups:</p>
+<pre><code>[frontend]
+host1.example.com
+host2.example.com
+
+[web:children]
+frontend
+
+[web:vars]
+http_port=80
+secure=true
+
+[proxy]
+host1.example.com
+
+[proxy:vars]
+http_port=8080
+thread_count=10</code></pre>
+<p>And the <strong>http_port</strong> variable is set in both the <strong>[web:vars]</strong> and the <strong>[proxy:vars]</strong> group variable stanzas. This will conflict for the <strong>host1.example.com</strong> server.</p>
+<p>By default ansible assigns them according to the alphabretical name of the groups. So in this case the <strong>[web:vars]</strong> setting <em>http_port=80</em> will apply to the server.</p>
+<p>To override this, use the <strong>ansible_group_priority</strong> group variable like so:</p>
+<pre><code>[proxy:vars]
+http_port=8080
+thread_count=10
+ansible_group_priority=10</code></pre>
+<p>Now the <strong>[proxy:vars]</strong> block will win. This is better than having to rename groups if you want to change the order.</p>
+<h4 id="summary" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#summary" title="Permanent link: Summary" data-icon="#">Summary</a></h4>
+<ul>
+<li>Playbooks contain variables and tasks.</li>
+<li>Tasks link bits of code called modules with arguments, which can be populated by variable data.</li>
+<li>These combinations are transported to selected hosts from provided inventory sources.</li>
+</ul>
+<h2 id="protecting-secrets-with-ansible" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#protecting-secrets-with-ansible" title="Permanent link: Protecting Secrets with Ansible" data-icon="#">Protecting Secrets with Ansible</a></h2>
+<p>The Ansible facility for encrypting text files is <strong>Vault</strong>. Before 2.4, all secrets were accessed with a single Vault password. Now, by using <em>Vault IDs</em> you can have multiple passwords for varying levels of security, depending on the asset being protected. For example you could have one vault ID for testing, and another vault ID for production, with a stronger password.</p>
+<p>Ansible Vault passwords can come from one of the following three sources:</p>
+<ul>
+<li>a user entered string which ansible will prompt for when required</li>
+<li>a secured, flat text file with the vault password in unencrypted form.</li>
+<li>an executable such as a python script which fetches the pw from a credential mgmt system</li>
+</ul>
+<p>Here is an example for using each of the 3 methods on the command line, for vault ID <strong>prod</strong>:</p>
+<pre><code>ansible-playbook --vault-id prod@prompt playbook.yaml
+ansible-playbook --vault-id prod@/path-to/vault-password-text-file playbook.yaml
+ansible-playbook --vault-id prod@/path-to/vault-password-script.py playbook.yaml</code></pre>
+<p>They can also be combined:</p>
+<pre><code>ansible-playbook --vault-id prod@prompt testing@/path-to/vault-password-text-file playbook.yaml</code></pre>
+<p>Vault can encrypt any <em>structured</em> data used by Ansible. This can be almost any YAML or JSON file, or even a single variable in an otherwise unencrypted YAML file such as a playbook or role.</p>
+<p>Examples of encrypted files that ansible can work with include:</p>
+<ul>
+<li>group_vars/ files</li>
+<li>host_vars/ files</li>
+<li>include_vars targets</li>
+<li>vars_files targets</li>
+<li>--extra-vars targets</li>
+<li>Role variables</li>
+<li>Role defaults</li>
+<li>Task files</li>
+<li>Handler files</li>
+<li>Source files for the copy module</li>
+</ul>
+<p>If a file can be expressed in YAML and read by Ansible, or if a file is to be transported with the <strong>copy</strong> module, it is a valid file for encryption in Vault.</p>
+<p>Because the entire file will be unreadable at rest, care should be taken to not be overzealous in picking which files to encrypt. Any source control operations with the files will be done with the encrypted content, making it very difficult to peer-review.</p>
+<p>To avoid having to encrypt an entire YAML file, ansible has the <strong>encrypt_string</strong> feature for ansible vault, which allows to encrypt a string within a YAML file.</p>
+<p>Creating and interacting with vault-encrypted files is done using <strong>ansible-vault</strong> on the command line.</p>
+<h3 id="create-a-new-encrypted-file" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#create-a-new-encrypted-file" title="Permanent link: Create a new encrypted file" data-icon="#">Create a new encrypted file</a></h3>
+<p>Here are 3 examples of using <strong>ansible-vault create</strong> to create a new encrypted file:</p>
+<p><strong>prompting for the vault password</strong></p>
+<p><code>ansible-vault create --vault-id @prompt secrets.yaml</code> -  first it will prompt for the password to set, then an editor will open to enter the items in the file.</p>
+<p><strong>using a password file</strong></p>
+<pre><code>echo "password" &gt; password_file
+ansible-vault create --vault-id ./password_file secrets.yaml</code></pre>
+<p>Again it will open an editor</p>
+<p><strong>using a password script</strong></p>
+<p><code>ansible-vault create --vault-id ./password.sh secrets.yaml</code> - the script will retrieve the password and ansible will assign it, then open the editor for entering items.</p>
+<h3 id="encrypt-an-existing-file" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#encrypt-an-existing-file" title="Permanent link: Encrypt an existing file" data-icon="#">Encrypt an existing file</a></h3>
+<p>Use <strong>ansible-vault encrypt</strong> to encrypt existing files.</p>
+<p><code>ansible-vault encrypt --vault-id @prompt existing_file.yaml</code> - each of the three methods for setting the password apply here as above.</p>
+<p>Multiple files can be entered on the command line at the same time. This gives you one password for all the files.</p>
+<h3 id="editing-encrypted-files" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#editing-encrypted-files" title="Permanent link: Editing encrypted files" data-icon="#">Editing encrypted files</a></h3>
+<p>After encryption, the files cannot be edited directly. Use <strong>ansible-vault edit</strong> to edit them.</p>
+<p><code>ansible-vault edit --vault-id @prompt encrypted_file.yaml</code> - the file will open in the editor.</p>
+<h3 id="decrypting-files" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#decrypting-files" title="Permanent link: Decrypting files" data-icon="#">Decrypting files</a></h3>
+<p>Use <strong>ansible-vault decrypt</strong> for this.</p>
+<p><code>ansible-vault decrypt --vault-id @prompt encrypted_file.yaml</code></p>
+<h3 id="executing-playbooks-with..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#executing-playbooks-with..." title="Permanent link: Executing playbooks with encrypted files" data-icon="#">Executing playbooks with encrypted files</a></h3>
+<p>Using an encrypted file in a playbook means entering the vault id and password method on the command line when running <strong>ansible-playbook</strong>:</p>
+<p><code>ansible-playbook -i hosts --vault-id prod@prompt playbook.yaml</code></p>
+<p>Within the playbook the yaml file is stated as normal:</p>
+<pre><code>---
+- name: show me an encrypted var
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - a_vars_file.yaml
+
+  tasks:
+    - name: print the variable
+      debug:
+        var: something</code></pre>
+<h3 id="encrypting-a-string" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#encrypting-a-string" title="Permanent link: Encrypting a string" data-icon="#">Encrypting a string</a></h3>
+<p>To use an encrypted string in a playbook, without having to create file for the string and encrypting the file, use <strong>ansible-vault encrypt_string</strong> to first generate a hash for the string and echo it to stdout. Then in the playbook you just paste in the hash at the variable block:</p>
+<pre><code>vars:
+  my_secret: !vault ....</code></pre>
+<p><strong>NOTE</strong> The book example is a typo, cannot show it above.</p>
+<h3 id="protecting-secrets-on-remote..." class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#protecting-secrets-on-remote..." title="Permanent link: Protecting secrets on remote hosts" data-icon="#">Protecting secrets on remote hosts</a></h3>
+<p>When ansible runs against a remote host, you can prevent your secrets from showing up in log files on that host by setting the key <strong>no_log: true</strong> within the task block that uses the secret.</p>
+<pre><code>---
+- name: show me an encrypted var
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - a_vars_file.yaml
+
+  tasks:
+    - name: print the variable
+      debug:
+        var: something
+      no_log: true</code></pre>
+<p>You can also set ansible to log locally instead of on the remote host by either:</p>
+<ul>
+<li>setting <strong>log_path</strong> in the ansible.cfg to a local path on the machine running ansible</li>
+<li>setting the <strong>ANSIBLE_LOG_PATH</strong> env variable to a path writable by the user running ansible.</li>
+</ul>
+<h2 id="ansible-awx" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#ansible-awx" title="Permanent link: Ansible AWX" data-icon="#">Ansible AWX</a></h2>
+<p><strong>AWX</strong> is the open source upstream version of Ansible Tower. It is a web GUI frontend which users can use to run the playbooks centrally, for easier tracking of user activity and management of secrets etc.</p>
+<p>It runs in docker containers and therefore can even be run in kubernetes or openshift. It offers many advantages for enterprise:</p>
+<ul>
+<li>RBAC control</li>
+<li>integration with LDAP, AD etc</li>
+<li>secure credential management</li>
+<li>auditability</li>
+<li>accountability</li>
+<li>lower barrrier to entry for new ansible users</li>
+<li>improved management of playbook version control</li>
+</ul>
+<h3 id="setup-awx" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#setup-awx" title="Permanent link: Setup AWX" data-icon="#">Setup AWX</a></h3>
+<p>I created <code>awx.yml</code> playbook to install rerequites on the docker host:</p>
+<pre><code>---
+  - name: install everything for AWX
+    hosts: docker
+    vars:
+      packages:
+        - git
+        - python-pip
+        - ansible
+      pips:
+        - setuptools
+        - docker-compose
+    tasks:
+      - name: install packages for awx
+        package:
+          name: "{{packages}}"
+          state: present
+      - name: install python tools
+        pip:
+          name: "{{pips}}"</code></pre>
+<p>Next clone the aws repo:
+<code>git clone https://github.com/ansible/awx.git</code> then cd to <strong>aws/installer</strong></p>
+<p>Open the <code>inventory</code> file and set the following parameters:</p>
+<ul>
+<li>admin_password = nikkyron</li>
+<li>pg_password = nikkyron</li>
+<li>postgres_data_dir = /var/lib/awx/pgdocker</li>
+<li>project_data_dir = /var/lib/awx/projects</li>
+<li>rabbitmq_password = nikkyron</li>
+<li>secret_key = nikkyron</li>
+</ul>
+<p>Finally, install with <code>sudo ansible-playbook -i inventory install.yml</code>.</p>
+<p>This launches the containers on port 80, then go to <code>http://docker:80</code> and login with admin/nikkyron.</p>
+<p>The book goes thru a very basic demo of running a single playbook against the docker host.</p>
+<p>For usage on AWX go to the Tower docs page <a href="https://docs.ansible.com/ansible-tower/index.html">here</a>.</p>
+<h2 id="jinja2-templates" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#jinja2-templates" title="Permanent link: Jinja2 Templates" data-icon="#">Jinja2 Templates</a></h2>
+<p><strong>Jinja2</strong> is a modern and designer-friendly templating language for Python. In this section we will cover <strong>Control structures</strong>, <strong>Data manipulation</strong>, and <strong>Comparisons</strong>.</p>
+<h3 id="control-structures" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#control-structures" title="Permanent link: Control Structures" data-icon="#">Control Structures</a></h3>
+<p>Control structures include conditionals, loops, and macros, and they appear in <code>[%....%]</code> format.</p>
+<h4 id="conditionals" class="headeranchor"><a class="headeranchor-link headeranchor-link--left headeranchor-visible--hover" aria-hidden="true" href="#conditionals" title="Permanent link: Conditionals" data-icon="#">Conditionals</a></h4>
+<p>Conditionals are <strong>if</strong> statements that work much the same as in python. They can have one or more optional <strong>elif</strong> blocks, and an optional <strong>else</strong> block. Unlike python, the if statement requires an explicit <strong>endif</strong>.</p>
+<pre><code>setting = {{ setting }}
+{% if feature.enabled %}
+feature = True
+{% else %}
+feature = False
+{% endif %}
+another_setting = {{ another_setting }}</code></pre>";s:12:"content_meta";N;}
