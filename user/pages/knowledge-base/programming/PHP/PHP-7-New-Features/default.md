@@ -9,7 +9,7 @@ taxonomy:
 ---
 
 ## Scalar type declarations
-Scalar type declaration means the statement to a function to accept arguments (parameters) or return values only of the given scalar data type (int, float, string, bool, interfaces, array, callable).
+Scalar type declaration means that the statement to a function to accept arguments (parameters) or return values only of the given scalar data type (int, float, string, bool, interfaces, array, callable).
 
 *Argument type declarations* - To specify a scalar type declaration in an argument list, the name of the scalar data type should be added before the parameter name in the arguments. 
 In 2 flavors: *coercive* (default) and *strict*.  
