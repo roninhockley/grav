@@ -9,7 +9,7 @@ taxonomy:
 ---
 [toc]
 
-## SSH Connections  test yet agai
+## SSH Connections
 
 Connections involve 2 factors:
 - initial connection over SSH to the host
