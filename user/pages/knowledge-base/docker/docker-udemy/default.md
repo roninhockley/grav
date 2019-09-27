@@ -15,4 +15,4 @@ Notes from the Udemy course **Docker mastery: The Complete Toolset from a Docker
 ## Persistent Data
 
 - create named volumes for easy recognition.
-    docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True **-v mysql-db:/var/lib/mysql** mysql
+     docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True **-v mysql-db:/var/lib/mysql** mysql
