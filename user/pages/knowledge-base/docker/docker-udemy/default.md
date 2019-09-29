@@ -34,3 +34,7 @@ Mount a folder on host to a container. This also works if the dockerfile has a d
 
   docker run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True **-v /host/path:/var/lib/mysql** mysql
 
+The use case for bind mounts would be allowing the host to manipulate data in a directory and have the container see the chantges immediately. For instance, you run a build and the artifact goes to the bind-mounted directory and the container gets the new artifact immediately.
+
+## Docker Compose
+
