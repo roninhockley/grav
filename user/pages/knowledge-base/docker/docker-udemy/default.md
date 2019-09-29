@@ -38,3 +38,30 @@ The use case for bind mounts would be allowing the host to manipulate data in a 
 
 ## Docker Compose
 
+Compose allows you to build a system of containers that use each other, such as a new deployment of drupal. You need a container to run the webserver to serve out the PHP, and another container to run the database. So you use a compose file to declare all the containers (services)  and the volumes and ports that are needed.
+
+Example for drupal:
+
+    version: '2'
+
+    services:
+      drupal:
+        image: drupal:8.2
+        ports:
+          - "8080:80"
+        volumes:
+          - drupal-modules:/var/www/html/modules
+          - drupal-profiles:/var/www/html/profiles       
+          - drupal-sites:/var/www/html/sites      
+          - drupal-themes:/var/www/html/themes
+      postgres:
+        image: postgres:9.6
+        environment:
+          - POSTGRES_PASSWORD=mypasswd
+
+    volumes:
+      drupal-modules:
+      drupal-profiles:
+      drupal-sites:
+      drupal-themes:
+
