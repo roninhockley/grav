@@ -9,7 +9,5 @@ taxonomy:
 ---
 [toc]
 
-The three main sections of a Git project: the Git directory, the
-working directory, and the staging area:
+Information for using GIT.
 
-![](./3sections.png)
