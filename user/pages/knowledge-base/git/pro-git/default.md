@@ -71,3 +71,35 @@ Tracked files can be in one of 3 states:  *unmodified, modified,* or *staged*.
 
 Consult the Pro Git book which has a nice explanation of the syntax for the `.gitignore` file.
 
+### Remove files
+
+Use `git rm` to remove files. From there you commit, then the file is gone from the repo and from your working directory. If you do `git rm --cached` it will NOT be removed from the working directory. 
+
+### Move files
+
+To rename a file use `git mv`. Git will rm the old filename and add the new one.
+
+### Viewing history log
+
+Use `git log` to see past commit history. Some variations include:
+- **git log -s** - short log view
+- **git log -p** - more detailed view that shows the actual diff changes
+- **git log -p -2** - show details, but only show 2 log records. The last 2 commits in other words.
+
+### Amending a commit
+
+Use `git commit --amend` if you made a commit but want to either modify the commit message or add more files. If you run the amend and you have not made any additional changes to the files committed previously it will only bring up the commit editor for the last commit so you can modify it.
+
+If you make a commit, then you realize you wanted to add more changes to that commit, or you want more changes to be on that last commit, you can make the additional changes, then do `git add` followed by `git commit --amend` and the additional changes will be added to the last commit.
+
+### Unstaging files
+
+To remove a file from the staging area use `git reset HEAD <filename>`. Afterwards, the file will remain modified in the working directory, but not be staged for commit.
+
+### Undoing modifications to files in working directory
+
+Use `git checkout -- <filename>` to undo changes to a file in the working directory. GIT will simply revert the file to its state during the last commit. In other words it will pull it from the .git directory (snapshot).
+
+!!! This is irreversible. So be sure you can live without those changes before doing this.
+
+
