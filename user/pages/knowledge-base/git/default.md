@@ -1,6 +1,6 @@
 ---
 visible: true
-title: How to use GIT
+title: GIT
 author:
   name: Ron Fish
 taxonomy:
