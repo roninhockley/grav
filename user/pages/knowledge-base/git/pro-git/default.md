@@ -123,3 +123,61 @@ Note that `git fetch` does not merge the remote version of any file into your cu
 
 If after running `git pull` the remote version of a file will have changes that conflict with changes you made (and committed), a merge conflict will occur which has to be dealt with before the remote can be merged.
 
+### Pushing to remotes
+
+To push your committed changes to a remote use `git push <remote name> <branch name>`. So to push your local master branch to the origin server, use `git push origin master`.
+
+### Inspecting a remote
+
+To see more info about a remote use `git remote show <remote name>`. 
+
+### Removing and renaming remotes
+
+To change a remote's shortname, use `git remote rename <current shortname> <new shortname>`. This also changes it on the remote server. In other words if you do `git remote rename rf ron`, the reference to *rf/master* will now be *ron/master*.
+
+To remove a remote use `git remote rm <shortname>`.
+
+### Tagging
+
+Tagging is used to mark important commits in the history. It is typically used to tag a release point like **v1.0** or **v1.1** etc.
+
+### Listing tags
+
+Use `git tag` to list all tags in the repo. They will be listed alphabetically.
+You can also search for tags with a pattern, like `git tag -l "v1.8*"`. 
+
+### Creating tags
+
+There are 2 main types of tags, **lightweight** and **annotated**.
+
+A lightweight tag is just a pointer to a specific commit. It is like a branch that never changes.
+
+An annotated tag has much more information, and is stored in GIT as a full object. It is checksummed, has the tagger's name, email, date, a tagging message, and can be signed with GPG.
+
+It is recommended to create annotated tags unless the tag is temporary or not important enough to have all this info.
+
+### Annotated tags
+
+To create an annotated tag, just do `git tag -a <tagname> -m "tagging message"`, for example `git tag -a v1.3 -m "version 1.3"`. This applies to the last commit. To tag a specific commit add some of the commit hash to the end.
+
+### Lightweight tags
+
+A lightweight tag is basically just a commit's checksum stored in a file, no other info is kept. 
+To create a lightweight tag, just do not specify the *-a, -s,* or *-m* options. `git tag v1.3`.
+As mentioned above, this tags the latest commit. To tag a specific commit, add the hash to the end.
+
+### Sharing tags
+
+By default `git push` does not push your tags upstream. To push a tag upstream do `git push <remote name> <tagname>`. Or to push all your tags at once do `git push <remote name> --tags`. 
+
+### Git aliases
+
+Just like aliases in bash, you can create shortcuts with git commands.
+`git config --global alias.co checkout` will create an alias that allows you to type **co** instead of **checkout**.
+
+Even better you could create a better alias for unstaging a file:
+
+`git config --global alias.unstage 'reset HEAD --'`. Then, instead of typing `git reset HEAD -- <file>` you can do `git unstage file` to accomplish the same thing.
+
+## Branching
+
