@@ -9,7 +9,65 @@ taxonomy:
 ---
 [toc]
 
+## Background
+
 The three main sections of a Git project: the Git directory, the
 working directory, and the staging area:
 
 ![](./3sections.png)
+
+The Git directory `.git` is where Git stores the metadata and object database for
+your project. This is the most important part of Git, and it is what is copied
+when you clone a repository from another computer.
+
+The working directory is a single checkout of one version of the project.
+These files are pulled out of the compressed database in the Git directory and
+placed on disk for you to use or modify.
+
+The staging area is a file, `.git/index` generally contained in your Git directory, that
+stores information about what will go into your next commit. It’s sometimes re-
+ferred to as the “index”, but it’s also common to refer to it as the staging area.
+
+The basic Git workflow goes something like this:
+
+1. You modify files in your working directory.
+2. You stage the files, adding snapshots of them to your staging area.
+3. You do a commit, which takes the files as they are in the staging area and
+stores that snapshot permanently to your Git directory.
+
+If a particular version of a file is in the Git directory, it’s considered commit-
+ted. If it has been modified and was added to the staging area, it is staged. And
+if it was changed since it was checked out but has not been staged, it is modi-
+fied.
+
+## Basics on usage
+
+To initialize git in an existing project directory do `git init`. This creates the **.git** folder which is your repository skeleton. The actual repo sits in here.  
+
+To start tracking the files in your project do:
+    git add .  # or file/wildcard/directory etc
+    git commit -m 'initial commit'
+
+To pull down a remote repo do `git clone <URL>`.
+
+For a new repo, going forward, any files that are either staged (git add) or have been committed will now be tracked files, because they will now be in either the index (staged) snapshot or in the `.git` folder (committed). Any files that have been added to the working tree but have not been committed and are not currently staged, will be untracked files.
+
+To summarize, the 3 main areas of a repo:
+
+- **.git folder** - anything in here is a tracked file
+- **.git/index** - anything in here is staged. the staging area is a snapshot, so these files are tracked. (unless you unstage them)
+- **working tree** - any files in here that have not been previously committed, and are not currectly staged are untracked.
+
+When you clone a repo, all files that were pulled down during the clone are tracked, since they are already in the snapshot under `.git`. As above, any files in the repo that were not in the original snapshot when cloned, and have not been committed, and are not currently staged, will be untracked files.
+
+Tracked files can be in one of 3 states:  *unmodified, modified,* or *staged*.
+- **unmodified** - they are in the working tree in the same state (checksum) as the .git snapshot.
+- **modified** - they are in a different state in the working tree than in the .git snapshot
+- **staged** - they are currently in the **.git/index** staging file, to be committed.
+
+![](./tracked-states.png)
+
+### git ignore
+
+Consult the Pro Git book which has a nice explanation of the syntax for the `.gitignore` file.
+
