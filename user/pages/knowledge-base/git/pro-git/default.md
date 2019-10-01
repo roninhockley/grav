@@ -102,4 +102,24 @@ Use `git checkout -- <filename>` to undo changes to a file in the working direct
 
 !!! This is irreversible. So be sure you can live without those changes before doing this.
 
+### Working with remotes
+
+A remote is simply a version of your project that is hosted on another computer. 
+
+### Show remotes
+
+Use `git remote -v` to display URLs for all remotes.
+
+### Adding remotes
+
+To add a remote for a repo, use `git remote add <shortname> <URL>`. Then you can use `git fetch <shortname>` to fetch the remote files.
+
+### Fetching and pulling from remotes
+
+As mentioned above, use `git fetch <shortname>` to pull down all data from a remote that you dont already have. 
+When you clone a repo, a remote named **origin** will automatically be added to the list of remotes.
+
+Note that `git fetch` does not merge the remote version of any file into your current work. You have to do that manually. The `git pull` command fetches and merges automatically, and is usually the more comfortable workflow. When you run `git pull` and the remote version of a file you have locally is different, a merge commit will be generated and the editor will pop up for you to enter a commit message.
+
+If after running `git pull` the remote version of a file will have changes that conflict with changes you made (and committed), a merge conflict will occur which has to be dealt with before the remote can be merged.
 
