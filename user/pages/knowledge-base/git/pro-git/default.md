@@ -16,8 +16,7 @@ The three main sections of a Git project:
 - **working directory** - this is what you see when you cd into your git project folder. it contains all the files that make up your project, along with a **.git** folder which is referred to as the **git directory**
 
 - **git directory** - the **.git** directory. This is where git stores everything that represents your git repository as it is being tracked. When files are committed, they are copied to the **.git/objects** directory, and metadata about the files and the commits is in there also. Also in the **.git** directory are the hooks, etc.
-
-This does in fact mean that, for any file that has been committed, there is a duplicate of that file in here for what you see in the working directory.
+**NOTE** This does in fact mean that, for any file that has been committed, there is a duplicate of that file in here for what you see in the working directory.
 
 - **staging area** - this is a file in the **.git** directory called *index*. When you stage files for commit with `git add <files>`, the file in its modified state in the working directory is copied into the **.git/objects** directory. Then the checksum for the modified version of that file is placed in the index file. 
 
