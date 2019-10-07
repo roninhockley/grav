@@ -170,3 +170,8 @@ Even better you could create a better alias for unstaging a file:
 
 ## Branching
 
+Key points:
+- branches are just pointers to commits in the history that you can move around. By default when you create a branch it is pointing to the latest HEAD commit of the branch you are branching off of:
+
+![](./branch1.png)
+
