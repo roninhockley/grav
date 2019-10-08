@@ -33,6 +33,14 @@ The basic Git workflow goes something like this:
 
 ## Basics on usage
 
+### Configure git client to use https
+
+For this to work git must have the cert from the git server. Download the cert ( a .crt file) and put it in a folder such as */home/ron/gitcerts/<certname>*
+
+Then do `git config --global http.sslCAInfo /home/ron/gitcerts/gitlab.crt`.
+
+At this point git clone will work with https.
+
 ### Create a new repo
 
 To initialize git in an existing project directory do `git init`. This creates the **.git** folder which is your repository skeleton. The actual repo sits in here.  
