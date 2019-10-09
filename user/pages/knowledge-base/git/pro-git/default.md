@@ -13,7 +13,7 @@ taxonomy:
 
 The docker container registry stores docker images that are tagged according to a project name. Currently all images are tagged to the docker project with the following format:
 
-gitlab.nikkyrron.com:4567/cicd/docker/*<name>:<tag>*
+`gitlab.nikkyrron.com:4567/cicd/docker/<name>:<tag>`
 
 Example:
 
