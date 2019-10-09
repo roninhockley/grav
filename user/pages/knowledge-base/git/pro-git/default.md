@@ -9,6 +9,17 @@ taxonomy:
 ---
 [toc]
 
+**info on our [gitlab server](https://gitlab.nikkyrron.com)**
+
+The docker container registry stores docker images that are tagged according to a project name. Currently all images are tagged to the docker project with the following format:
+
+gitlab.nikkyrron.com:4567/cicd/docker/*<name>:<tag>*
+
+Example:
+
+gitlab.nikkyrron.com:4567/cicd/docker/**ubuntu:bionic**
+
+
 ## Background
 
 The three main sections of a Git project: 
