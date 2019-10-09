@@ -11,7 +11,7 @@ taxonomy:
 
 **info on our [gitlab server](https://gitlab.nikkyrron.com)**
 
-The docker container registry stores docker images that are tagged according to a project name. Currently all images are tagged to the docker project with the following format:
+The docker container registry stores docker images that are tagged according to a <group</<project> name. Currently all images are tagged to the cicd/docker project with the following format:
 
 `gitlab.nikkyrron.com:4567/cicd/docker/<name>:<tag>`
 
