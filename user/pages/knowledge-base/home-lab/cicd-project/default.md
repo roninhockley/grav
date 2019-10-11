@@ -19,5 +19,13 @@ GIT -->  Jenkins --> Image on registry --> deploy to staging ( local k8s cluster
 ### Progress so far
 
 - **Gitlab server** is online with repos created. It also has a container registry for docker images. It serves out on both SSH and HTTPS with certificates intact.
+
+The first project is the calculator app from the book. The deploy token for jenkins is:
+
+Username:  gitlab+deploy-token-2
+PW:  D6Tx5Tae4hNys-MzJs3r
+
+
 - **jenkins master** is online in a docker container at http://docker.nikkyrron.com:8081 . I will front this with an nginx reverse proxy later on so we can use a **http://jenkins.nikkyrron.com** URL .
+    - **plugins** - default plus docker
 
