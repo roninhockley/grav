@@ -52,6 +52,12 @@ Here is a sample inventory file that demonstrates both how the INI file is struc
 
 [**The full list of available inventory variables:**](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
 
+## ad-hoc commands
+
+To execute an ad-hoc from the command line use this format:
+
+    ansible <host> -m <module> -a "<arguments>"
+
 ## Playbooks
 
 ### Order of Operations
