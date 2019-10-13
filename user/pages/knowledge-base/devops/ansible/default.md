@@ -58,6 +58,12 @@ To execute an ad-hoc from the command line use this format:
 
     ansible <host> -m <module> -a "<arguments>"
 
+**Example:**
+
+For an ad-hoc using the file module an ad-hoc would look like this:
+
+    ansible master -m file -a "path=/etc/network/interfaces state=absent"
+
 ## Playbooks
 
 ### Order of Operations
