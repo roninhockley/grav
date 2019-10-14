@@ -58,6 +58,10 @@ To execute an ad-hoc from the command line use this format:
 
     ansible <host> -m <module> -a "<arguments>"
 
+## Gather facts
+
+    ansible <host> -m setup
+
 **Example:**
 
 For an ad-hoc using the file module an ad-hoc would look like this:
