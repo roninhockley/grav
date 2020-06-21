@@ -11,5 +11,5 @@ taxonomy:
 
 ### The solution being build in this course
 A wordpress app spanning multiple AZ. redundant and resilient across data centers
--app servers on an auto scaling group
+- app servers on an auto scaling group
 ![](./1.png)
