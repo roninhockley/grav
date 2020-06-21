@@ -1,6 +1,6 @@
 ---
 visible: true
-title: AWS Certified Solutions Architect
+title: AWS Certified Solutions Architect - Udemy
 author:
   name: Ron Fish
 taxonomy:
