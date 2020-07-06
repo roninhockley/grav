@@ -12,7 +12,7 @@ taxonomy:
 ### The solution being build in this course
 A wordpress app spanning multiple AZ. redundant and resilient across data centers using app servers on an auto scaling group:
 
-![](./2.png)
+![](./3.png)
 
 **guide for well architected framework**
 
