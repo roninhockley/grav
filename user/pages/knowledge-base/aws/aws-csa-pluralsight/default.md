@@ -12,4 +12,9 @@ taxonomy:
 ### The solution being build in this course
 A wordpress app spanning multiple AZ. redundant and resilient across data centers
 - app servers on an auto scaling group
-![](./1.png)
+![](./2.png)
+
+**guide for well architected framework**
+
+[https://aws.amazon.com/architecture/well-architected](https://aws.amazon.com/architecture/well-architected)
+
