@@ -43,5 +43,13 @@ Either command line, or the web interface uses the same API.
 
 Once the request is received, it is authorized via **access policy** assigned directly to a user, a group, or a role which an app could assume, to perform the actions or access the resources in the request.
 
+Configure IAM users to perform duties, don't user the root user.
+Some ways to assign permissions:
+ - Create a user, add to group that has the policies needed
+ - assign policies directly to a user
+ - add user as a **trusted entity** to a role
 
+
+
+**NOTE**: when viewing policies on the AWS website you can click to show json, and see the policy as it is defined programmatically.
 
