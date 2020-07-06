@@ -35,7 +35,7 @@ Key concepts:
 
 ### IAM
 
-The **principal** could be a user or app which passes thru authentication with either user/pw or programmatic keys. 
+The **principal** could be a user or app which passes thru authentication with either user/pw or programmatic keys (for app use, non interactively). 
 
 Once this passes, it is on to a request for an action or a resource. The request is driven by API. 
 
