@@ -10,8 +10,8 @@ taxonomy:
 [toc]
 
 ### The solution being build in this course
-A wordpress app spanning multiple AZ. redundant and resilient across data centers
-- app servers on an auto scaling group
+A wordpress app spanning multiple AZ. redundant and resilient across data centers using app servers on an auto scaling group:
+
 ![](./2.png)
 
 **guide for well architected framework**
