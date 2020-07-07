@@ -53,3 +53,4 @@ Some ways to assign permissions:
 
 **NOTE**: when viewing policies on the AWS website you can click to show json, and see the policy as it is defined programmatically.
 
+### Audit logging with CloudTrail
