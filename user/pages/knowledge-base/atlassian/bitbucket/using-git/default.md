@@ -9,7 +9,8 @@ taxonomy:
 ---
 [toc]
 
-**GitHub token**:  7b24b281e3803e810eb780d1bc24157e83ae5875
+**GitHub token**:  ac6d335057be0a7f3594db430d2751ec84114d94
+**created Jul 19, 2020**
 
 ## Navigating GIT
 
