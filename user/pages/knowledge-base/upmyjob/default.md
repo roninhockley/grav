@@ -30,9 +30,11 @@ Code and design are highly opinionated, and being there as an architect is the o
 
 With the use of open source tooling wherever possible, the goal here is an AWS hosted platform to build and host microservice based containers on AWS, first on ECS and then on to EKS Kubernetes.
 
+All infrastructure will sit on the upmyjob.com domain, which is currently pointing to AWS Route 53.
+
 **Steps:**
 
-Source the documentation needed for the technologies:
+1. Source the documentation needed for the technologies:
 - docker
 - kubernetes
 - AWS
@@ -43,12 +45,12 @@ Source the documentation needed for the technologies:
 - bash
 - Python
 
-Establish GitHub private repos for the code.
+2. Establish GitHub private repos for the code.
 
-Configure the AWS CLI on workstation.
+3. Configure the AWS CLI on workstation.
 
-Decide what containers to run and either pull or create.
+4. Decide what containers to run and either pull or create.
 
-Create custom AMIs with Packer to run on EC2 instances for ECS.
+5. Create custom AMIs with Packer to run on EC2 instances for ECS.
 
 
