@@ -7,7 +7,7 @@ visible: true
 
 To publish to this knowledge base clone the repo like so:
 
-        git clone git@gitlab.nikkyrron.com:ron/grav.git
+        git clone https://github.com/roninhockley/grav.git
 
 Then:
 
