@@ -11,7 +11,7 @@ taxonomy:
 
 ## Project Outline
 
-This project is all about learning all the things on your own that you will not learn on the job.
+This project is all about executing subprojects for learning all the things on your own that you will not learn on the job.
 - move your resume forward by not being limited to what your company uses
 - stay focused on the **right** way instead of when your company gets off track
 - avoid becoming entrenched in your company's proprietary way of doing things. again moving the resume forward.
@@ -24,8 +24,31 @@ Fixing other people's shortsighted, hurried, wreckless creations is frustrating 
 
 Code and design are highly opinionated, and being there as an architect is the only way to drive the finished product toward maintainability and durability.
 
-## Project Roadmap
+## The AWS Microservices Subproject
 
-With the use of open source tooling wherever possible, the goals are:
-- estabish aws-cli on all nodes used.
+### Roadmap
+
+With the use of open source tooling wherever possible, the goal here is an AWS hosted platform to build and host microservice based containers on AWS, first on ECS and then on to EKS Kubernetes.
+
+**Steps:**
+
+Source the documentation needed for the technologies:
+- docker
+- kubernetes
+- AWS
+- Terraform
+- Packer
+- Ansible
+- Jenkins
+- bash
+- Python
+
+Establish GitHub private repos for the code.
+
+Configure the AWS CLI on workstation.
+
+Decide what containers to run and either pull or create.
+
+Create custom AMIs with Packer to run on EC2 instances for ECS.
+
 
